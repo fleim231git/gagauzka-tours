@@ -174,9 +174,10 @@ footer .logo-img{width:64px;height:64px;}
 #tours{padding:8rem 3rem;background:var(--bg)}
 .tours-wrap{max-width:1280px;margin:0 auto}
 .tours-head{margin-bottom:3.5rem}
-.tours-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:430px 430px 430px;gap:1.25rem}
+.tours-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 
-.tc{position:relative;border-radius:24px;overflow:hidden;cursor:pointer}
+.tc{position:relative;border-radius:24px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s}
+.tc:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(26,25,21,.18)}
 .tc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
 .tc:hover .tc-img{transform:scale(1.06)}
 .tc-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.97) 0%,rgba(10,10,8,.35) 52%,rgba(10,10,8,.04) 100%);transition:background .4s}
@@ -228,8 +229,8 @@ footer .logo-img{width:64px;height:64px;}
 #guides{padding:8rem 3rem;background:var(--bg)}
 .guides-wrap{max-width:1280px;margin:0 auto}
 .guides-head{margin-bottom:4rem}
-/* asymmetric 65 / 35 — Masha is the lead */
-.guides-duo{display:grid;grid-template-columns:65fr 35fr;gap:1.5rem;align-items:start}
+/* balanced layout — both guides prominent */
+.guides-duo{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
 
 .g-card{background:var(--white);border:1px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
 .g-card:hover{transform:translateY(-5px);box-shadow:0 12px 48px rgba(26,25,21,.13)}
@@ -242,7 +243,7 @@ footer .logo-img{width:64px;height:64px;}
 .g-primary:hover .g-photos-row img{transform:scale(1.03)}
 
 /* SECONDARY card — also dual photo, equal split */
-.g-secondary .g-photos-row{grid-template-columns:1fr 1fr;height:340px}
+.g-secondary .g-photos-row{grid-template-columns:1fr 1fr;height:480px}
 .g-secondary:hover .g-photos-row img{transform:scale(1.03)}
 
 /* fallback single photo (unused now but kept) */
@@ -515,7 +516,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
   .stats-row{grid-template-columns:repeat(2,1fr);padding:0 1.5rem}
   .stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border)}
   #tours,#gallery,#includes,#guides,#booking,footer{padding-left:1.5rem;padding-right:1.5rem}
-  .tours-grid{grid-template-columns:1fr;grid-template-rows:auto}.tc{height:350px}
+  .tours-grid{grid-template-columns:1fr}.tc{aspect-ratio:16/9}
   .tc-region,.tc-cta{opacity:1;transform:none}.tc-desc{max-height:80px;opacity:1}
   .gal-head,.gal-strip{padding-left:1.5rem;padding-right:1.5rem}
   .inc-grid{grid-template-columns:1fr 1fr}
@@ -559,6 +560,24 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 
 /* review platform contact links */
 .contact-a.platform-link .c-ico{font-size:1rem;display:flex;align-items:center;justify-content:center}
+
+/* ════════════════════════════════
+   LIGHTBOX
+════════════════════════════════ */
+#lightbox{
+  position:fixed;inset:0;z-index:999;
+  background:rgba(10,10,8,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  display:none;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s;cursor:zoom-out;
+}
+#lightbox.open{display:flex;opacity:1}
+#lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 8px 60px rgba(0,0,0,.5);object-fit:contain;cursor:default}
+.lb-close{position:absolute;top:1.5rem;right:2rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,.25)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.lb-nav:hover{background:rgba(255,255,255,.25)}
+.lb-prev{left:1.5rem}
+.lb-next{right:1.5rem}
   </style>
 </head>
 <body>
@@ -629,7 +648,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     </div>
     <div class="tours-grid">
 
-      <div class="tc r">
+      <div class="tc r" onclick="location.href='tours/gagauzia.html'">
         <div style="position:absolute;inset:0;background:url('assets/images/Olea.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
         <img class="tc-img" src="assets/images/Olea.jpg" alt="Gagauzia" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
@@ -638,12 +657,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Gagauzia Discovery</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
           <p class="tc-desc">Meet a local family, join their cooking, taste wine straight from the vineyard. A world few outsiders ever enter.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span><span class="price-p">Group (2+) · 130€/pp</span></div>
+          <a href="tours/gagauzia.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
-      <div class="tc r d1">
+      <div class="tc r d1" onclick="location.href='tours/soviet-nostalgia.html'">
         <div style="position:absolute;inset:0;background:url('assets/images/photo_2026-04-29_11-16-31.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
         <img class="tc-img" src="assets/images/photo_2026-04-29_11-16-31.jpg" alt="Soviet Nostalgia" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
@@ -652,12 +671,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Soviet Nostalgia Tour</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
           <p class="tc-desc">Cross into the breakaway state where the USSR never ended. Lenin statues, Soviet symbols, time frozen in 1991.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span><span class="price-p">Group (2+) · 130€/pp</span></div>
+          <a href="tours/soviet-nostalgia.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
-      <div class="tc r d2">
+      <div class="tc r d2" onclick="location.href='tours/guinness.html'">
         <img class="tc-img" src="assets/images/tour-pmr.jpg" alt="Guinness wine cellar" style="object-position:center 40%">
         <div class="tc-veil"></div>
         <div class="tc-body">
@@ -665,12 +684,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Guinness World Record</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
           <p class="tc-desc">Hidden Soviet Gallery + Milestii Mici — the world's largest wine cellar with 1.5 million bottles underground.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span><span class="price-p">Group (2+) · 130€/pp</span></div>
+          <a href="tours/guinness.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
-      <div class="tc r d3">
+      <div class="tc r d3" onclick="location.href='tours/odessa.html'">
         <img class="tc-img" src="assets/images/tour-odessa2.jpg" alt="Odessa sunset" style="object-position:center 30%">
         <div class="tc-veil"></div>
         <div class="tc-body">
@@ -678,12 +697,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Odessa Seafood Tour</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Cristi</div>
           <p class="tc-desc">Legendary Black Sea port — iconic architecture, vibrant streets, ending with fresh seafood on the waterfront.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 200€</span><span class="price-p">Private · 350€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 200€</span><span class="price-p">Private · 350€</span><span class="price-p">Group (2+) · 170€/pp</span></div>
+          <a href="tours/odessa.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
-      <div class="tc r d4">
+      <div class="tc r d4" onclick="location.href='tours/chisinau.html'">
         <div style="position:absolute;inset:0;background:url('assets/images/gallery-night-chisinau.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
         <img class="tc-img" src="assets/images/gallery-night-chisinau.jpg" alt="Chisinau by night" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
@@ -692,12 +711,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Chișinău City Tour</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
           <p class="tc-desc">Soviet architecture, vibrant food markets, underground art scenes and the city's best wine bars — Chișinău through the eyes of a local.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span><span class="price-p">Group (2+) · 130€/pp</span></div>
+          <a href="tours/chisinau.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
-      <div class="tc r d5">
+      <div class="tc r d5" onclick="location.href='tours/moldova.html'">
         <div style="position:absolute;inset:0;background:url('assets/images/hero.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
         <img class="tc-img" src="assets/images/hero.jpg" alt="Moldova landscape" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
@@ -706,8 +725,8 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <h3 class="tc-name">Moldova Tour</h3>
           <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
           <p class="tc-desc">Vineyards, village life and Soviet-era monuments hidden in the countryside — an immersive day through Moldova's soul.</p>
-          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span></div>
-          <a href="#booking" class="tc-cta">Book this tour <span class="arr">→</span></a>
+          <div class="tc-prices"><span class="price-p">Shared · 150€</span><span class="price-p">Private · 300€</span><span class="price-p">Group (2+) · 130€/pp</span></div>
+          <a href="tours/moldova.html" class="tc-cta">View tour <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -1017,10 +1036,15 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <div class="fg"><label>Preferred Date</label><input type="date" name="date"></div>
           <div class="fg">
             <label>Group Size</label>
-            <select name="size">
+            <select name="size" id="groupSize" onchange="toggleCustomSize(this)">
               <option>1 person</option><option>2 people</option><option>3 people</option>
               <option>4 people</option><option>5 people</option><option>6 people</option><option>7 people</option>
+              <option value="custom">Custom group size</option>
             </select>
+          </div>
+          <div class="fg" id="customSizeWrap" style="display:none">
+            <label>Number of People *</label>
+            <input type="number" name="custom_size" id="customSizeInput" min="1" max="100" placeholder="Enter group size">
           </div>
           <div class="fg"><label>Pick-up Point</label><input type="text" name="pickup" placeholder="Hotel name / address"></div>
           <div class="fg"><label>Drop-off Point</label><input type="text" name="dropoff" placeholder="Hotel name / address"></div>
@@ -1080,7 +1104,51 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 </footer>
 
 
+<!-- ═══ LIGHTBOX ══════════════════════════════════ -->
+<div id="lightbox" onclick="lbClose(event)">
+  <button class="lb-close" onclick="lbClose(event)">✕</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(event,-1)">‹</button>
+  <img id="lbImg" src="" alt="Gallery photo">
+  <button class="lb-nav lb-next" onclick="lbNav(event,1)">›</button>
+</div>
+
 <script>
+/* Lightbox */
+let lbImages=[], lbIdx=0;
+function lbInit(){
+  lbImages = Array.from(document.querySelectorAll('#galStrip .gi img')).map(i=>i.src);
+  document.querySelectorAll('#galStrip .gi').forEach((gi,i)=>{
+    gi.style.cursor='zoom-in';
+    gi.addEventListener('click',()=>lbOpen(i));
+  });
+}
+function lbOpen(i){
+  lbIdx=i;
+  document.getElementById('lbImg').src=lbImages[i];
+  const lb=document.getElementById('lightbox');
+  lb.style.display='flex';
+  requestAnimationFrame(()=>lb.classList.add('open'));
+  document.body.style.overflow='hidden';
+}
+function lbClose(e){
+  if(e.target.tagName==='IMG'||e.target.classList.contains('lb-nav'))return;
+  const lb=document.getElementById('lightbox');
+  lb.classList.remove('open');
+  setTimeout(()=>{lb.style.display='none'},300);
+  document.body.style.overflow='';
+}
+function lbNav(e,dir){
+  e.stopPropagation();
+  lbIdx=(lbIdx+dir+lbImages.length)%lbImages.length;
+  document.getElementById('lbImg').src=lbImages[lbIdx];
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='Escape')lbClose(e);
+  if(e.key==='ArrowLeft')lbNav(e,-1);
+  if(e.key==='ArrowRight')lbNav(e,1);
+});
+
 /* Nav scroll */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
@@ -1349,6 +1417,22 @@ document.querySelectorAll('.dest-tab').forEach(btn => {
   });
 });
 bldRender(true);
+lbInit();
+
+/* Custom group size toggle */
+function toggleCustomSize(sel){
+  const wrap = document.getElementById('customSizeWrap');
+  const inp = document.getElementById('customSizeInput');
+  if(sel.value === 'custom'){
+    wrap.style.display = '';
+    inp.required = true;
+    inp.focus();
+  } else {
+    wrap.style.display = 'none';
+    inp.required = false;
+    inp.value = '';
+  }
+}
 
 /* Form */
 function sendForm(e){
