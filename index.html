@@ -92,6 +92,13 @@ footer .logo-img{width:64px;height:64px;}
   transition:transform .2s,box-shadow .2s;
 }
 .nav-book:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,255,0,.5)}
+.lang-sw{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:2px;flex-shrink:0}
+#nav.scrolled .lang-sw{background:var(--bg2);border-color:var(--border)}
+.ls-btn{background:transparent;border:none;color:rgba(255,255,255,.6);padding:.3rem .6rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .22s;font-family:'Space Grotesk',sans-serif;line-height:1}
+#nav.scrolled .ls-btn{color:var(--muted)}
+.ls-btn.active{background:var(--lime);color:var(--dark)}
+.ls-btn:hover:not(.active){background:rgba(255,255,255,.18);color:#fff}
+#nav.scrolled .ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
 
 /* ════════════════════════════════
    HERO  (dark overlay on photo)
@@ -595,12 +602,19 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     <span class="logo-l">Gagauzka Tours</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#tours">Tours</a></li>
-    <li><a href="#builder">Build Your Tour</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#guides">Guides</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#booking" class="nav-book">Book Now</a></li>
+    <li><a href="#tours" data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</a></li>
+    <li><a href="#builder" data-en="Build Your Tour" data-ru="Составь тур" data-ro="Creează Turul">Build Your Tour</a></li>
+    <li><a href="#gallery" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a></li>
+    <li><a href="#guides" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a></li>
+    <li><a href="#reviews" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a></li>
+    <li>
+      <div class="lang-sw" id="langSw">
+        <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+        <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
+      </div>
+    </li>
+    <li><a href="#booking" class="nav-book" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a></li>
   </ul>
 </nav>
 
@@ -615,25 +629,25 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     <circle class="c2" cx="148" cy="332" r="5"/>
   </svg>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="badge-dot"></span>Moldova's Hidden Tours</div>
-    <h1 class="hero-h1">Discover<br><em>Moldova's</em>Secrets</h1>
-    <p class="hero-p">Off-the-beaten-path adventures through Gagauzia, Transnistria, Chisinau &amp; Odessa — authentic, immersive, unforgettable.</p>
+    <div class="hero-badge"><span class="badge-dot"></span><span data-en="Moldova's Hidden Tours" data-ru="Скрытые туры Молдовы" data-ro="Tururi Ascunse din Moldova">Moldova's Hidden Tours</span></div>
+    <h1 class="hero-h1" data-en-html="Discover<br><em>Moldova's</em>Secrets" data-ru-html="Открой<br><em>секреты</em>Молдовы" data-ro-html="Descoperă<br><em>secretele</em>Moldovei">Discover<br><em>Moldova's</em>Secrets</h1>
+    <p class="hero-p" data-en="Off-the-beaten-path adventures through Gagauzia, Transnistria, Chisinau &amp; Odessa — authentic, immersive, unforgettable." data-ru="Нетуристические маршруты по Гагаузии, Приднестровью, Кишинёву и Одессе — аутентично, глубоко, незабываемо." data-ro="Aventuri neturistice prin Găgăuzia, Transnistria, Chișinău și Odesa — autentice, captivante, de neuitat.">Off-the-beaten-path adventures through Gagauzia, Transnistria, Chisinau &amp; Odessa — authentic, immersive, unforgettable.</p>
     <div class="hero-ctas">
-      <a href="#tours" class="btn-lime">Explore Tours ↓</a>
-      <a href="#booking" class="btn-ghost">Book a Spot</a>
+      <a href="#tours" class="btn-lime" data-en="Explore Tours ↓" data-ru="Смотреть туры ↓" data-ro="Explorează tururi ↓">Explore Tours ↓</a>
+      <a href="#booking" class="btn-ghost" data-en="Book a Spot" data-ru="Забронировать" data-ro="Rezervă un loc">Book a Spot</a>
     </div>
   </div>
-  <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
+  <div class="scroll-cue"><div class="scroll-line"></div><span data-en="Scroll" data-ru="Скролл" data-ro="Derulează">Scroll</span></div>
 </section>
 
 
 <!-- ═══ STATS ════════════════════════════════════ -->
 <section id="stats">
   <div class="stats-row">
-    <div class="stat r"><span class="stat-n">6</span><span class="stat-l">Unique Tours</span></div>
-    <div class="stat r d1"><span class="stat-n">≤ 7</span><span class="stat-l">Per Group</span></div>
-    <div class="stat r d2"><span class="stat-n">3h</span><span class="stat-l">Reply Time</span></div>
-    <div class="stat r d3"><span class="stat-n">★ 5</span><span class="stat-l">Rated</span></div>
+    <div class="stat r"><span class="stat-n">6</span><span class="stat-l" data-en="Unique Tours" data-ru="Уникальных туров" data-ro="Tururi Unice">Unique Tours</span></div>
+    <div class="stat r d1"><span class="stat-n">≤ 7</span><span class="stat-l" data-en="Per Group" data-ru="В группе" data-ro="Per Grup">Per Group</span></div>
+    <div class="stat r d2"><span class="stat-n">3h</span><span class="stat-l" data-en="Reply Time" data-ru="Время ответа" data-ro="Timp Răspuns">Reply Time</span></div>
+    <div class="stat r d3"><span class="stat-n">★ 5</span><span class="stat-l" data-en="Rated" data-ru="Рейтинг" data-ro="Evaluat">Rated</span></div>
   </div>
 </section>
 
@@ -642,9 +656,9 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="tours">
   <div class="tours-wrap">
     <div class="tours-head">
-      <div class="sec-label r">Our Tours</div>
-      <h2 class="sec-h2 r d1">Choose Your<br>Adventure</h2>
-      <p class="sec-p r d2">Each tour is a portal to a world most travellers never see. Small groups, real guides, genuine experiences.</p>
+      <div class="sec-label r" data-en="Our Tours" data-ru="Наши туры" data-ro="Tururile Noastre">Our Tours</div>
+      <h2 class="sec-h2 r d1" data-en-html="Choose Your<br>Adventure" data-ru-html="Выбери своё<br>приключение" data-ro-html="Alege-ți<br>Aventura">Choose Your<br>Adventure</h2>
+      <p class="sec-p r d2" data-en="Each tour is a portal to a world most travellers never see. Small groups, real guides, genuine experiences." data-ru="Каждый тур — портал в мир, который большинство туристов не видит никогда. Маленькие группы, настоящие гиды, подлинные впечатления." data-ro="Fiecare tur este un portal spre o lume pe care cei mai mulți călători nu o văd niciodată. Grupuri mici, ghizi locali, experiențe autentice.">Each tour is a portal to a world most travellers never see. Small groups, real guides, genuine experiences.</p>
     </div>
     <div class="tours-grid">
 
@@ -653,12 +667,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/Olea.jpg" alt="Gagauzia" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Southern Moldova · 8 hours</span>
-          <h3 class="tc-name">Tasty Gagauzia Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
-          <p class="tc-desc">Meet a local family, join their cooking, taste wine straight from the vineyard. A world few outsiders ever enter.</p>
+          <span class="tc-region" data-en="Southern Moldova · 8 hours" data-ru="Южная Молдова · 8 часов" data-ro="Moldova de Sud · 8 ore">Southern Moldova · 8 hours</span>
+          <h3 class="tc-name" data-en="Tasty Gagauzia Tour" data-ru="Вкусная Гагаузия" data-ro="Turul Gastronomic Găgăuzia">Tasty Gagauzia Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></div>
+          <p class="tc-desc" data-en="Meet a local family, join their cooking, taste wine straight from the vineyard. A world few outsiders ever enter." data-ru="Познакомьтесь с местной семьёй, приготовьте еду вместе, попробуйте вино прямо с виноградника. Мир, в который редко попадают чужие." data-ro="Cunoașteți o familie locală, gătiți împreună, gustați vin direct din vie. O lume în care puțini din afară ajung vreodată.">Meet a local family, join their cooking, taste wine straight from the vineyard. A world few outsiders ever enter.</p>
           <div class="tc-prices"><span class="price-p">Shared · 180€</span><span class="price-p">Private · 300€</span></div>
-          <a href="tours/gagauzia.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/gagauzia.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -667,12 +681,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/photo_2026-04-29_11-16-31.jpg" alt="Soviet Nostalgia" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Transnistria · PMR</span>
-          <h3 class="tc-name">Back to USSR Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
-          <p class="tc-desc">Cross into the breakaway state where the USSR never ended. Lenin statues, Soviet symbols, time frozen in 1991.</p>
+          <span class="tc-region" data-en="Transnistria · PMR" data-ru="Приднестровье · ПМР" data-ro="Transnistria · RMN">Transnistria · PMR</span>
+          <h3 class="tc-name" data-en="Back to USSR Tour" data-ru="Назад в СССР" data-ro="Înapoi în URSS">Back to USSR Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></div>
+          <p class="tc-desc" data-en="Cross into the breakaway state where the USSR never ended. Lenin statues, Soviet symbols, time frozen in 1991." data-ru="Въезд в непризнанное государство, где СССР так и не закончился. Статуи Ленина, советская символика, время заморожено в 1991-м." data-ro="Intrați în statul nerecunoscut unde URSS nu s-a terminat niciodată. Statui Lenin, simboluri sovietice, timp înghețat în 1991.">Cross into the breakaway state where the USSR never ended. Lenin statues, Soviet symbols, time frozen in 1991.</p>
           <div class="tc-prices"><span class="price-p">Shared · 180€</span><span class="price-p">Private · 300€</span></div>
-          <a href="tours/soviet-nostalgia.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/soviet-nostalgia.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -680,12 +694,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/tour-pmr.jpg" alt="Guinness wine cellar" style="object-position:center 40%">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Chișinău · Moldova · 6 hours</span>
-          <h3 class="tc-name">Soviet Legacy Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
-          <p class="tc-desc">Soviet art gallery, open-air museum, iconic Romașca housing complex — Chișinău's hidden USSR legacy in one day.</p>
+          <span class="tc-region" data-en="Chișinău · Moldova · 6 hours" data-ru="Кишинёв · Молдова · 6 часов" data-ro="Chișinău · Moldova · 6 ore">Chișinău · Moldova · 6 hours</span>
+          <h3 class="tc-name" data-en="Soviet Legacy Tour" data-ru="Советское наследие" data-ro="Moștenirea Sovietică">Soviet Legacy Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></div>
+          <p class="tc-desc" data-en="Soviet art gallery, open-air museum, iconic Romașca housing complex — Chișinău's hidden USSR legacy in one day." data-ru="Советская галерея искусств, музей под открытым небом, знаменитый жилой комплекс Ромашка — скрытое советское наследие Кишинёва за один день." data-ro="Galerie de artă sovietică, muzeu în aer liber, complexul rezidențial iconic Romanița — moștenirea ascunsă a URSS din Chișinău într-o singură zi.">Soviet art gallery, open-air museum, iconic Romașca housing complex — Chișinău's hidden USSR legacy in one day.</p>
           <div class="tc-prices"><span class="price-p">Shared · 130€</span><span class="price-p">Private · 200€</span></div>
-          <a href="tours/guinness.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/guinness.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -693,12 +707,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/tour-odessa2.jpg" alt="Odessa sunset" style="object-position:center 30%">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Odessa · Black Sea</span>
-          <h3 class="tc-name">Odessa Seafood Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Cristi</div>
-          <p class="tc-desc">Legendary Black Sea port — iconic architecture, vibrant streets, ending with fresh seafood on the waterfront.</p>
+          <span class="tc-region" data-en="Odessa · Black Sea" data-ru="Одесса · Чёрное море" data-ro="Odesa · Marea Neagră">Odessa · Black Sea</span>
+          <h3 class="tc-name" data-en="Odessa Tour" data-ru="Тур в Одессу" data-ro="Turul Odesa">Odessa Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Cristian" data-ru="Гид: Кристиан" data-ro="Ghid: Cristian">Guide: Cristian</span></div>
+          <p class="tc-desc" data-en="Legendary Black Sea port — iconic architecture, vibrant streets, ending with fresh seafood on the waterfront." data-ru="Легендарный черноморский порт — знаковая архитектура, оживлённые улицы, финал — свежие морепродукты на набережной." data-ro="Port legendar la Marea Neagră — arhitectură iconică, străzi vibrante, final cu fructe de mare proaspete la mal.">Legendary Black Sea port — iconic architecture, vibrant streets, ending with fresh seafood on the waterfront.</p>
           <div class="tc-prices"><span class="price-p">Shared · 250€</span><span class="price-p">Private · 390€</span></div>
-          <a href="tours/odessa.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/odessa.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -707,12 +721,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/gallery-night-chisinau.jpg" alt="Chisinau by night" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Chișinău · Moldova · 3 hours</span>
-          <h3 class="tc-name">Chișinău City Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
-          <p class="tc-desc">Soviet architecture, vibrant food markets, hidden restaurants with a special soul-warming concept — Chișinău through the eyes of a local.</p>
+          <span class="tc-region" data-en="Chișinău · Moldova · 3 hours" data-ru="Кишинёв · Молдова · 3 часа" data-ro="Chișinău · Moldova · 3 ore">Chișinău · Moldova · 3 hours</span>
+          <h3 class="tc-name" data-en="Chișinău City Tour" data-ru="Тур по Кишинёву" data-ro="Turul Orașului Chișinău">Chișinău City Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></div>
+          <p class="tc-desc" data-en="Soviet architecture, vibrant food markets, hidden restaurants with a special soul-warming concept — Chișinău through the eyes of a local." data-ru="Советская архитектура, шумные рынки, скрытые рестораны с особой душевной концепцией — Кишинёв глазами местного жителя." data-ro="Arhitectură sovietică, piețe alimentare vibrante, restaurante ascunse cu un concept aparte — Chișinău prin ochii unui local.">Soviet architecture, vibrant food markets, hidden restaurants with a special soul-warming concept — Chișinău through the eyes of a local.</p>
           <div class="tc-prices"><span class="price-p">Shared · 50€</span><span class="price-p">Private · 100€</span></div>
-          <a href="tours/chisinau.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/chisinau.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -721,12 +735,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img class="tc-img" src="assets/images/hero.jpg" alt="Moldova landscape" style="object-fit:contain; object-position:center center; background:transparent">
         <div class="tc-veil"></div>
         <div class="tc-body">
-          <span class="tc-region">Moldova · Wine Country · 8 hours</span>
-          <h3 class="tc-name">Moldova Tour</h3>
-          <div class="tc-guide"><span class="tc-guide-dot"></span>Guide: Masha</div>
-          <p class="tc-desc">Vineyards, village life and monastery trails hidden in the countryside — an immersive day through Moldova's soul.</p>
+          <span class="tc-region" data-en="Moldova · Wine Country · 8 hours" data-ru="Молдова · Страна вина · 8 часов" data-ro="Moldova · Țara Vinului · 8 ore">Moldova · Wine Country · 8 hours</span>
+          <h3 class="tc-name" data-en="Moldova Tour" data-ru="Тур по Молдове" data-ro="Turul Moldovei">Moldova Tour</h3>
+          <div class="tc-guide"><span class="tc-guide-dot"></span><span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></div>
+          <p class="tc-desc" data-en="Vineyards, village life and monastery trails hidden in the countryside — an immersive day through Moldova's soul." data-ru="Виноградники, деревенский быт и монастырские тропы в сельской глубинке — погружённый день сквозь душу Молдовы." data-ro="Vii, viața la sat și poteci de mănăstire ascunse la țară — o zi de imersiune prin sufletul Moldovei.">Vineyards, village life and monastery trails hidden in the countryside — an immersive day through Moldova's soul.</p>
           <div class="tc-prices"><span class="price-p">Shared · 200€</span><span class="price-p">Private · 350€</span></div>
-          <a href="tours/moldova.html" class="tc-cta">View tour <span class="arr">→</span></a>
+          <a href="tours/moldova.html" class="tc-cta"><span data-en="View tour" data-ru="Смотреть тур" data-ro="Vezi turul">View tour</span> <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -739,9 +753,9 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="builder">
   <div class="bld-wrap">
     <div class="bld-head">
-      <div class="sec-label r">Custom Tours</div>
-      <h2 class="sec-h2 r d1">Build Your<br>Own Tour</h2>
-      <p class="sec-p r d2">Pick a destination, choose up to 5 experiences — we'll put together a personal itinerary just for you.</p>
+      <div class="sec-label r" data-en="Custom Tours" data-ru="Индивидуальные туры" data-ro="Tururi Personalizate">Custom Tours</div>
+      <h2 class="sec-h2 r d1" data-en-html="Build Your<br>Own Tour" data-ru-html="Создай свой<br>собственный тур" data-ro-html="Creează-ți<br>Propriul Tur">Build Your<br>Own Tour</h2>
+      <p class="sec-p r d2" data-en="Pick a destination, choose up to 5 experiences — we'll put together a personal itinerary just for you." data-ru="Выбери направление, отметь до 5 активностей — мы составим персональный маршрут специально для тебя." data-ro="Alege o destinație, selectează până la 5 experiențe — vom crea un itinerar personal special pentru tine.">Pick a destination, choose up to 5 experiences — we'll put together a personal itinerary just for you.</p>
     </div>
 
     <div class="dest-tabs r d3">
@@ -798,8 +812,8 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <!-- ═══ GALLERY ══════════════════════════════════ -->
 <section id="gallery">
   <div class="gal-head">
-    <div class="sec-label r">Gallery</div>
-    <h2 class="sec-h2 r d1">Life on the Road</h2>
+    <div class="sec-label r" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</div>
+    <h2 class="sec-h2 r d1" data-en="Life on the Road" data-ru="Жизнь в дороге" data-ro="Viață pe Drum">Life on the Road</h2>
   </div>
   <div class="gal-strip" id="galStrip">
     <div class="gi c"><img src="assets/images/gallery-night-chisinau.jpg"    alt="Night in Chisinau"      style="object-position:center 40%"></div>
@@ -819,16 +833,16 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="includes">
   <div class="inc-wrap">
     <div class="inc-head">
-      <div class="sec-label r">What's Included</div>
-      <h2 class="sec-h2 r d1">Everything Taken<br>Care Of</h2>
+      <div class="sec-label r" data-en="What's Included" data-ru="Что включено" data-ro="Ce Este Inclus">What's Included</div>
+      <h2 class="sec-h2 r d1" data-en-html="Everything Taken<br>Care Of" data-ru-html="Всё уже<br>организовано" data-ro-html="Totul Este<br>Aranjat">Everything Taken<br>Care Of</h2>
     </div>
     <div class="inc-grid">
-      <div class="inc-card r"><div class="inc-ico">🚗</div><h3 class="inc-h">Private Air-Conditioned Car</h3><p class="inc-p">Hotel pick-up and drop-off included. Travel in comfort with a professional driver.</p></div>
-      <div class="inc-card r d1"><div class="inc-ico">🎫</div><h3 class="inc-h">All Entry Tickets</h3><p class="inc-p">Every gallery, museum, and attraction covered. No surprise costs at the door.</p></div>
-      <div class="inc-card r d2"><div class="inc-ico">🍽️</div><h3 class="inc-h">Authentic Lunch</h3><p class="inc-p">Home cooking in Gagauzia, Soviet-style in Transnistria, fresh seafood in Odessa.</p></div>
-      <div class="inc-card r d3"><div class="inc-ico">🍷</div><h3 class="inc-h">Wine Tasting (Optional)</h3><p class="inc-p">Add a curated tasting of Moldova's world-class wines to any tour.</p></div>
-      <div class="inc-card r d4"><div class="inc-ico">🎁</div><h3 class="inc-h">Handpicked Souvenir</h3><p class="inc-p">Every private tour includes a unique local or Soviet-era souvenir.</p></div>
-      <div class="inc-card r d5"><div class="inc-ico">📸</div><h3 class="inc-h">Photography</h3><p class="inc-p">Your guides capture every moment — you stay present, we handle the memories.</p></div>
+      <div class="inc-card r"><div class="inc-ico">🚗</div><h3 class="inc-h" data-en="Private Air-Conditioned Car" data-ru="Машина с кондиционером" data-ro="Mașină Privată cu Aer Condiționat">Private Air-Conditioned Car</h3><p class="inc-p" data-en="Hotel pick-up and drop-off included. Travel in comfort with a professional driver." data-ru="Трансфер от отеля и обратно включён. Комфортное путешествие с профессиональным водителем." data-ro="Transfer de la hotel inclus. Călătoriți confortabil cu un șofer profesionist.">Hotel pick-up and drop-off included. Travel in comfort with a professional driver.</p></div>
+      <div class="inc-card r d1"><div class="inc-ico">🎫</div><h3 class="inc-h" data-en="All Entry Tickets" data-ru="Все входные билеты" data-ro="Toate Biletele de Intrare">All Entry Tickets</h3><p class="inc-p" data-en="Every gallery, museum, and attraction covered. No surprise costs at the door." data-ru="Все галереи, музеи и достопримечательности включены. Никаких неожиданных доплат." data-ro="Fiecare galerie, muzeu și atracție acoperită. Fără costuri surpriză la intrare.">Every gallery, museum, and attraction covered. No surprise costs at the door.</p></div>
+      <div class="inc-card r d2"><div class="inc-ico">🍽️</div><h3 class="inc-h" data-en="Authentic Lunch" data-ru="Аутентичный обед" data-ro="Prânz Autentic">Authentic Lunch</h3><p class="inc-p" data-en="Home cooking in Gagauzia, Soviet-style in Transnistria, fresh seafood in Odessa." data-ru="Домашняя кухня в Гагаузии, советский стиль в Приднестровье, свежие морепродукты в Одессе." data-ro="Gătit acasă în Găgăuzia, stil sovietic în Transnistria, fructe de mare proaspete în Odesa.">Home cooking in Gagauzia, Soviet-style in Transnistria, fresh seafood in Odessa.</p></div>
+      <div class="inc-card r d3"><div class="inc-ico">🍷</div><h3 class="inc-h" data-en="Wine Tasting (Optional)" data-ru="Дегустация вина (по желанию)" data-ro="Degustare de Vin (Opțional)">Wine Tasting (Optional)</h3><p class="inc-p" data-en="Add a curated tasting of Moldova's world-class wines to any tour." data-ru="Добавьте к любому туру отборную дегустацию молдавских вин мирового класса." data-ro="Adăugați o degustare selectată din vinurile de clasă mondială ale Moldovei la orice tur.">Add a curated tasting of Moldova's world-class wines to any tour.</p></div>
+      <div class="inc-card r d4"><div class="inc-ico">🎁</div><h3 class="inc-h" data-en="Handpicked Souvenir" data-ru="Сувенир на память" data-ro="Suvenir Ales cu Grijă">Handpicked Souvenir</h3><p class="inc-p" data-en="Every private tour includes a unique local or Soviet-era souvenir." data-ru="Каждый частный тур включает уникальный местный или советский сувенир." data-ro="Fiecare tur privat include un suvenir local unic sau din epoca sovietică.">Every private tour includes a unique local or Soviet-era souvenir.</p></div>
+      <div class="inc-card r d5"><div class="inc-ico">📸</div><h3 class="inc-h" data-en="Photography" data-ru="Фотосъёмка" data-ro="Fotografie">Photography</h3><p class="inc-p" data-en="Your guides capture every moment — you stay present, we handle the memories." data-ru="Гиды запечатлеют каждый момент — вы наслаждаетесь, мы заботимся о воспоминаниях." data-ro="Ghizii voștri captează fiecare moment — rămâneți prezenți, noi ne ocupăm de amintiri.">Your guides capture every moment — you stay present, we handle the memories.</p></div>
     </div>
   </div>
 </section>
@@ -838,9 +852,9 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="guides">
   <div class="guides-wrap">
     <div class="guides-head">
-      <div class="sec-label r">Meet the Team</div>
-      <h2 class="sec-h2 r d1">Your Local Guides</h2>
-      <p class="sec-p r d2">Born and raised here — they don't just show you places, they connect you with the stories behind them.</p>
+      <div class="sec-label r" data-en="Meet the Team" data-ru="Познакомьтесь с командой" data-ro="Cunoaște Echipa">Meet the Team</div>
+      <h2 class="sec-h2 r d1" data-en="Your Local Guides" data-ru="Ваши местные гиды" data-ro="Ghizii Tăi Locali">Your Local Guides</h2>
+      <p class="sec-p r d2" data-en="Born and raised here — they don't just show you places, they connect you with the stories behind them." data-ru="Родились и выросли здесь — они не просто показывают места, они открывают истории, стоящие за ними." data-ro="Născuți și crescuți aici — nu doar arată locuri, ci vă conectează cu poveștile din spatele lor.">Born and raised here — they don't just show you places, they connect you with the stories behind them.</p>
     </div>
     <div class="guides-duo">
 
@@ -853,38 +867,37 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <div class="g-photo-side">
             <img src="assets/images/guide-masha-car.jpg" alt="Masha with tour car" style="object-position:center 18%">
           </div>
-          <div class="g-badge">✦ Main Guide</div>
+          <div class="g-badge" data-en="✦ Main Guide" data-ru="✦ Главный гид" data-ro="✦ Ghid Principal">✦ Main Guide</div>
         </div>
         <div class="g-info">
           <h3 class="g-name">Masha</h3>
           <p class="g-role">Gagauzia · Chisinau · Transnistria · Moldova</p>
-          <p class="g-bio">Masha is the heart of Gagauzka Tours. A passionate storyteller with deep roots in Moldovan culture, she connects you with local families, hidden history, and places most tourists never find — from the vineyards of Gagauzia to the frozen-in-time streets of Transnistria.</p>
+          <p class="g-bio" data-en="Masha is the heart of Gagauzka Tours. A passionate storyteller with deep roots in Moldovan culture, she connects you with local families, hidden history, and places most tourists never find — from the vineyards of Gagauzia to the frozen-in-time streets of Transnistria." data-ru="Маша — сердце Gagauzka Tours. Увлечённый рассказчик с глубокими корнями в молдавской культуре, она знакомит вас с местными семьями, скрытой историей и местами, которые большинство туристов никогда не найдут — от виноградников Гагаузии до замёрших в 1991-м улиц Приднестровья." data-ro="Masha este inima Gagauzka Tours. O povestitoare pasionată cu rădăcini adânci în cultura moldovenească, ea vă conectează cu familii locale, istorie ascunsă și locuri pe care cei mai mulți turiști nu le găsesc niciodată — de la viile Găgăuziei până la străzile înghețate în timp din Transnistria.">Masha is the heart of Gagauzka Tours. A passionate storyteller with deep roots in Moldovan culture, she connects you with local families, hidden history, and places most tourists never find — from the vineyards of Gagauzia to the frozen-in-time streets of Transnistria.</p>
           <div class="g-tags">
-            <span class="g-tag">Gagauzia Tour</span>
-            <span class="g-tag">Soviet Nostalgia</span>
-            <span class="g-tag">Guinness Record</span>
+            <span class="g-tag" data-en="Gagauzia Tour" data-ru="Тур Гагаузия" data-ro="Tur Găgăuzia">Gagauzia Tour</span>
+            <span class="g-tag" data-en="Soviet Nostalgia" data-ru="Советская ностальгия" data-ro="Nostalgie Sovietică">Soviet Nostalgia</span>
+            <span class="g-tag" data-en="Guinness Record" data-ru="Рекорд Гиннесса" data-ro="Record Guinness">Guinness Record</span>
           </div>
         </div>
       </div>
 
-      <!-- Cristi — SECONDARY 35% -->
+      <!-- Cristian — SECONDARY 35% -->
       <div class="g-card g-secondary r d1">
         <div class="g-photos-row">
           <div class="g-photo-main">
-            <img src="assets/images/guide-cristi.jpg" alt="Cristi" style="object-position:center 55%">
+            <img src="assets/images/guide-cristi.jpg" alt="Cristian" style="object-position:center 55%">
           </div>
           <div class="g-photo-side">
-            <img src="assets/images/guide-cristi-car.jpg" alt="Cristi with tour car" style="object-position:center 15%">
+            <img src="assets/images/guide-cristi-car.jpg" alt="Cristian with tour car" style="object-position:center 15%">
           </div>
-          <div class="g-badge">Odessa Guide</div>
+          <div class="g-badge" data-en="Odessa Guide" data-ru="Гид Одессы" data-ro="Ghid Odesa">Odessa Guide</div>
         </div>
         <div class="g-info">
-          <h3 class="g-name">Cristi</h3>
-          <p class="g-role">Odessa · Black Sea</p>
-          <p class="g-bio">Cristi knows Odessa like the back of his hand — its layered history, colourful architecture, and legendary food scene. Every trip to the Black Sea becomes a full immersive experience.</p>
+          <h3 class="g-name">Cristian</h3>
+          <p class="g-role">Odessa</p>
+          <p class="g-bio" data-en="Cristian knows Odessa like the back of his hand — its layered history, colourful architecture, and legendary food scene. Every trip to the Black Sea becomes a full immersive experience." data-ru="Кристиан знает Одессу как свои пять пальцев — её многослойную историю, красочную архитектуру и легендарную кулинарную сцену. Каждая поездка к Чёрному морю превращается в полное погружение." data-ro="Cristian cunoaște Odesa ca pe propriile lui mâini — istoria ei stratificată, arhitectura colorată și scena gastronomică legendară. Fiecare excursie la Marea Neagră devine o experiență imersivă completă.">Cristian knows Odessa like the back of his hand — its layered history, colourful architecture, and legendary food scene. Every trip to the Black Sea becomes a full immersive experience.</p>
           <div class="g-tags">
-            <span class="g-tag">Odessa Tour</span>
-            <span class="g-tag">Black Sea</span>
+            <span class="g-tag" data-en="Odessa Tour" data-ru="Тур Одесса" data-ro="Tur Odesa">Odessa Tour</span>
           </div>
         </div>
       </div>
@@ -898,8 +911,8 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="reviews">
   <div class="rev-wrap">
     <div class="rev-head">
-      <div class="sec-label r">What Travellers Say</div>
-      <h2 class="sec-h2 r d1">Real Reviews,<br>Real Experiences</h2>
+      <div class="sec-label r" data-en="What Travellers Say" data-ru="Что говорят путешественники" data-ro="Ce Spun Călătorii">What Travellers Say</div>
+      <h2 class="sec-h2 r d1" data-en-html="Real Reviews,<br>Real Experiences" data-ru-html="Настоящие отзывы,<br>настоящие впечатления" data-ro-html="Recenzii Reale,<br>Experiențe Reale">Real Reviews,<br>Real Experiences</h2>
     </div>
 
     <div class="rev-summary r d2">
@@ -985,57 +998,65 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <section id="booking">
   <div class="bk-wrap">
     <div class="bk-left">
-      <div class="sec-label r">Book Your Tour</div>
-      <h2 class="sec-h2 r d1">Ready to<br>Explore?</h2>
-      <p class="sec-p r d2">Fill in the form and we'll be in touch within 3 hours. No prepayment required — we'll sort everything out together.</p>
+      <div class="sec-label r" data-en="Book Your Tour" data-ru="Забронируй тур" data-ro="Rezervă Turul Tău">Book Your Tour</div>
+      <h2 class="sec-h2 r d1" data-en-html="Ready to<br>Explore?" data-ru-html="Готов<br>исследовать?" data-ro-html="Gata să<br>Explorezi?">Ready to<br>Explore?</h2>
+      <p class="sec-p r d2" data-en="Fill in the form and we'll be in touch within 3 hours. No prepayment required — we'll sort everything out together." data-ru="Заполни форму и мы свяжемся с тобой в течение 3 часов. Предоплата не требуется — всё обсудим вместе." data-ro="Completați formularul și vă vom contacta în 3 ore. Nu este necesară plata în avans — vom aranja totul împreună.">Fill in the form and we'll be in touch within 3 hours. No prepayment required — we'll sort everything out together.</p>
       <div class="bk-contacts r d3">
         <a href="mailto:work.jelezoglomaria@gmail.com" class="contact-a">
-          <div class="c-ico">✉️</div>
-          <div class="c-info"><span class="c-lbl">Email</span><span class="c-val">work.jelezoglomaria@gmail.com</span></div>
+          <div class="c-ico" style="background:#1A1915">
+            <svg width="20" height="15" viewBox="0 0 20 15" fill="none"><rect x=".75" y=".75" width="18.5" height="13.5" rx="2.25" stroke="white" stroke-width="1.5"/><path d="M1 2.5l9 6 9-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="c-info"><span class="c-lbl" data-en="Email" data-ru="Email" data-ro="Email">Email</span><span class="c-val">work.jelezoglomaria@gmail.com</span></div>
         </a>
         <a href="https://instagram.com/gagauzkatours" target="_blank" rel="noopener" class="contact-a">
-          <div class="c-ico">📸</div>
+          <div class="c-ico" style="background:linear-gradient(135deg,#FCAF45 0%,#E1306C 50%,#833AB4 100%)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
           <div class="c-info"><span class="c-lbl">Instagram</span><span class="c-val">@gagauzkatours</span></div>
         </a>
-        <a href="tel:+37360556786" class="contact-a">
-          <div class="c-ico">📞</div>
-          <div class="c-info"><span class="c-lbl">WhatsApp / Phone</span><span class="c-val">+373-60-556-786</span></div>
+        <a href="https://wa.me/37360556786" target="_blank" rel="noopener" class="contact-a">
+          <div class="c-ico" style="background:#25D366">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="c-info"><span class="c-lbl" data-en="WhatsApp / Phone" data-ru="WhatsApp / Телефон" data-ro="WhatsApp / Telefon">WhatsApp / Phone</span><span class="c-val">+373-60-556-786</span></div>
         </a>
         <a href="https://guidesofmoldova.com/guides/jelezoglo-maria" target="_blank" rel="noopener" class="contact-a">
           <div class="c-ico" style="background:#2D5BE3;color:#fff;font-size:.75rem;font-weight:700;font-family:'Space Grotesk',sans-serif">G</div>
           <div class="c-info"><span class="c-lbl">Guides of Moldova</span><span class="c-val">Masha's Profile &amp; Reviews</span></div>
         </a>
         <a href="https://www.tripadvisor.com/UserReviewEdit-g294456-d32824274-Trails_Tales_Tours-Chisinau_Chisinau_District.html" target="_blank" rel="noopener" class="contact-a">
-          <div class="c-ico" style="background:#00AF87;color:#fff;font-size:1rem">🦉</div>
-          <div class="c-info"><span class="c-lbl">Leave a Review</span><span class="c-val">TripAdvisor</span></div>
+          <div class="c-ico" style="background:#00AF87">
+            <svg width="22" height="14" viewBox="0 0 22 14" fill="white"><ellipse cx="5.5" cy="7" rx="5" ry="5" fill="none" stroke="white" stroke-width="1.4"/><ellipse cx="16.5" cy="7" rx="5" ry="5" fill="none" stroke="white" stroke-width="1.4"/><circle cx="5.5" cy="7" r="2"/><circle cx="16.5" cy="7" r="2"/><circle cx="4.8" cy="6.3" r=".7" fill="#00AF87"/><circle cx="15.8" cy="6.3" r=".7" fill="#00AF87"/></svg>
+          </div>
+          <div class="c-info"><span class="c-lbl" data-en="Leave a Review" data-ru="Оставить отзыв" data-ro="Lasă o Recenzie">Leave a Review</span><span class="c-val">TripAdvisor</span></div>
         </a>
       </div>
     </div>
 
     <div class="bk-panel r d1">
-      <h3 class="bk-title">Send a Request</h3>
-      <p class="bk-sub"><span class="live-dot"></span>We respond within 3 hours &nbsp;·&nbsp; No prepayment required</p>
+      <h3 class="bk-title" data-en="Send a Request" data-ru="Отправить запрос" data-ro="Trimite o Cerere">Send a Request</h3>
+      <p class="bk-sub"><span class="live-dot"></span><span data-en="We respond within 3 hours · No prepayment required" data-ru="Отвечаем в течение 3 часов · Предоплата не требуется" data-ro="Răspundem în 3 ore · Nu este necesară plata în avans">We respond within 3 hours &nbsp;·&nbsp; No prepayment required</span></p>
 
       <form id="bookForm" onsubmit="sendForm(event)">
         <div class="fgrid">
-          <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="Your name" required></div>
-          <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div>
-          <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
+          <div class="fg"><label data-en="Full Name *" data-ru="Полное имя *" data-ro="Nume Complet *">Full Name *</label><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="fg"><label data-en="Email *" data-ru="Email *" data-ro="Email *">Email *</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="fg"><label data-en="WhatsApp / Phone" data-ru="WhatsApp / Телефон" data-ro="WhatsApp / Telefon">WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
           <div class="fg">
-            <label>Tour *</label>
+            <label data-en="Tour *" data-ru="Тур *" data-ro="Tur *">Tour *</label>
             <select name="tour" required>
               <option value="" disabled selected>Select a tour</option>
               <option>Tasty Gagauzia Tour — with Masha</option>
               <option>Back to USSR Tour (Transnistria) — with Masha</option>
               <option>Soviet Legacy Tour — with Masha</option>
-              <option>Odessa Seafood Tour — with Cristi</option>
+              <option>Odessa Tour — with Cristian</option>
               <option>Chișinău City Tour — with Masha</option>
               <option>Moldova Tour — with Masha</option>
             </select>
           </div>
-          <div class="fg"><label>Preferred Date</label><input type="date" name="date"></div>
+          <div class="fg"><label data-en="Preferred Date" data-ru="Предпочтительная дата" data-ro="Data Preferată">Preferred Date</label><input type="date" name="date"></div>
           <div class="fg">
-            <label>Group Size</label>
+            <label data-en="Group Size" data-ru="Размер группы" data-ro="Mărimea Grupului">Group Size</label>
             <select name="size" id="groupSize" onchange="toggleCustomSize(this)">
               <option>1 person</option><option>2 people</option><option>3 people</option>
               <option>4 people</option><option>5 people</option><option>6 people</option><option>7 people</option>
@@ -1043,23 +1064,23 @@ footer .logo-l{color:rgba(255,255,255,.85)}
             </select>
           </div>
           <div class="fg" id="customSizeWrap" style="display:none">
-            <label>Number of People *</label>
+            <label data-en="Number of People *" data-ru="Количество человек *" data-ro="Numărul de Persoane *">Number of People *</label>
             <input type="number" name="custom_size" id="customSizeInput" min="1" max="100" placeholder="Enter group size">
           </div>
-          <div class="fg"><label>Pick-up Point</label><input type="text" name="pickup" placeholder="Hotel name / address"></div>
-          <div class="fg"><label>Drop-off Point</label><input type="text" name="dropoff" placeholder="Hotel name / address"></div>
-          <div class="fg s2"><label>Additional Notes</label><textarea name="notes" placeholder="Dietary restrictions, souvenir preferences, anything else we should know about your group…" style="min-height:110px"></textarea></div>
+          <div class="fg"><label data-en="Pick-up Point" data-ru="Место посадки" data-ro="Punct de Preluare">Pick-up Point</label><input type="text" name="pickup" placeholder="Hotel name / address"></div>
+          <div class="fg"><label data-en="Drop-off Point" data-ru="Место высадки" data-ro="Punct de Lasare">Drop-off Point</label><input type="text" name="dropoff" placeholder="Hotel name / address"></div>
+          <div class="fg s2"><label data-en="Additional Notes" data-ru="Дополнительные заметки" data-ro="Note Suplimentare">Additional Notes</label><textarea name="notes" placeholder="Dietary restrictions, souvenir preferences, anything else we should know about your group…" style="min-height:110px"></textarea></div>
           <div class="fg s2">
-            <label>Preferred Payment Method</label>
+            <label data-en="Preferred Payment Method" data-ru="Способ оплаты" data-ro="Metoda de Plată">Preferred Payment Method</label>
             <div class="pay-row">
-              <div class="pay-opt"><input type="radio" name="pay" id="pb" value="Bank Transfer" checked><label for="pb">🏦 Bank Transfer</label></div>
-              <div class="pay-opt"><input type="radio" name="pay" id="pc" value="Cash"><label for="pc">💵 Cash</label></div>
+              <div class="pay-opt"><input type="radio" name="pay" id="pb" value="Bank Transfer" checked><label for="pb">🏦 <span data-en="Bank Transfer" data-ru="Банк. перевод" data-ro="Transfer Bancar">Bank Transfer</span></label></div>
+              <div class="pay-opt"><input type="radio" name="pay" id="pc" value="Cash"><label for="pc">💵 <span data-en="Cash" data-ru="Наличные" data-ro="Numerar">Cash</span></label></div>
               <div class="pay-opt"><input type="radio" name="pay" id="pp" value="PayPal"><label for="pp">🅿️ PayPal</label></div>
             </div>
           </div>
         </div>
-        <button type="submit" class="submit-btn" id="submitBtn">Send Request →</button>
-        <p class="form-foot">No spam — we'll only contact you to confirm your tour details.</p>
+        <button type="submit" class="submit-btn" id="submitBtn" data-en="Send Request →" data-ru="Отправить запрос →" data-ro="Trimite Cererea →">Send Request →</button>
+        <p class="form-foot" data-en="No spam — we'll only contact you to confirm your tour details." data-ru="Без спама — свяжемся только для подтверждения деталей тура." data-ro="Fără spam — vă vom contacta doar pentru a confirma detaliile turului.">No spam — we'll only contact you to confirm your tour details.</p>
       </form>
     </div>
   </div>
@@ -1074,21 +1095,21 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <span class="logo-img" role="img" aria-label="Gagauzka Tours"></span>
         <span class="logo-l">Gagauzka Tours</span>
       </a>
-      <p class="ft-desc">Unfiltered travel experiences through Moldova and beyond. Authentic people, hidden places, memories that last a lifetime.</p>
+      <p class="ft-desc" data-en="Unfiltered travel experiences through Moldova and beyond. Authentic people, hidden places, memories that last a lifetime." data-ru="Нефильтрованные путешествия по Молдове и за её пределами. Настоящие люди, скрытые места, воспоминания на всю жизнь." data-ro="Experiențe de călătorie autentice prin Moldova și dincolo. Oameni autentici, locuri ascunse, amintiri pentru toată viața.">Unfiltered travel experiences through Moldova and beyond. Authentic people, hidden places, memories that last a lifetime.</p>
     </div>
     <div class="ft-col">
-      <h4>Tours</h4>
+      <h4 data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</h4>
       <ul>
         <li><a href="tours/gagauzia.html">Tasty Gagauzia Tour</a></li>
         <li><a href="tours/soviet-nostalgia.html">Back to USSR Tour</a></li>
         <li><a href="tours/guinness.html">Soviet Legacy Tour</a></li>
-        <li><a href="tours/odessa.html">Odessa Seafood Tour</a></li>
+        <li><a href="tours/odessa.html">Odessa Tour</a></li>
         <li><a href="tours/chisinau.html">Chișinău City Tour</a></li>
         <li><a href="tours/moldova.html">Moldova Tour</a></li>
       </ul>
     </div>
     <div class="ft-col">
-      <h4>Contact</h4>
+      <h4 data-en="Contact" data-ru="Контакты" data-ro="Contact">Contact</h4>
       <ul>
         <li><a href="mailto:work.jelezoglomaria@gmail.com">work.jelezoglomaria@gmail.com</a></li>
         <li><a href="https://instagram.com/gagauzkatours" target="_blank">@gagauzkatours</a></li>
@@ -1434,15 +1455,68 @@ function toggleCustomSize(sel){
   }
 }
 
-/* Form */
-function sendForm(e){
+/* Form — sends via FormSubmit.co → work.jelezoglomaria@gmail.com */
+async function sendForm(e){
   e.preventDefault();
   const btn=document.getElementById('submitBtn');
-  btn.textContent='✓ Sent! We\'ll reply within 3 hours.';
-  btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:12px;padding:1.05rem 2rem;font-family:Space Grotesk,sans-serif;font-size:1rem;font-weight:700;margin-top:.75rem;cursor:default';
+  const form=e.target;
+  btn.textContent='Sending…';
   btn.disabled=true;
-  // TODO: connect to FormSpree / EmailJS / backend
+  try{
+    const data={};
+    new FormData(form).forEach((val,key)=>{data[key]=val});
+    data['_subject']='New Booking Request — Gagauzka Tours';
+    const res=await fetch('https://formsubmit.co/ajax/work.jelezoglomaria@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    });
+    if(res.ok){
+      btn.textContent='✓ Sent! We\'ll reply within 3 hours.';
+      btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:12px;padding:1.05rem 2rem;font-family:Space Grotesk,sans-serif;font-size:1rem;font-weight:700;margin-top:.75rem;cursor:default';
+    }else{
+      btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';
+      btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:12px;padding:1.05rem 2rem;font-family:Space Grotesk,sans-serif;font-size:1rem;font-weight:700;margin-top:.75rem;cursor:pointer';
+      btn.disabled=false;
+    }
+  }catch{
+    btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';
+    btn.disabled=false;
+  }
 }
+
+/* Language switcher — EN / RU / RO */
+let currentLang=localStorage.getItem('gtLang')||'en';
+
+function setLang(lang){
+  currentLang=lang;
+  applyLang(lang);
+  localStorage.setItem('gtLang',lang);
+}
+
+function applyLang(lang){
+  // Plain text nodes
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const val = lang==='ru' ? (el.dataset.ru||el.dataset.en)
+              : lang==='ro' ? (el.dataset.ro||el.dataset.en)
+              : el.dataset.en;
+    el.textContent=val;
+  });
+  // HTML nodes (headings with <br>, <em>, etc.)
+  document.querySelectorAll('[data-en-html]').forEach(el=>{
+    const val = lang==='ru' ? (el.dataset.ruHtml||el.dataset.enHtml)
+              : lang==='ro' ? (el.dataset.roHtml||el.dataset.enHtml)
+              : el.dataset.enHtml;
+    el.innerHTML=val;
+  });
+  // Highlight active lang button
+  document.querySelectorAll('.ls-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.dataset.lang===lang);
+  });
+  document.documentElement.lang=lang;
+}
+
+if(currentLang!=='en')applyLang(currentLang);
 </script>
 </body>
 </html>
