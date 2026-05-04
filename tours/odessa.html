@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odessa Seafood Tour — Gagauzka Tours</title>
+  <title>Odessa Tour — Gagauzka Tours</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -136,7 +136,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
   <div class="tour-hero-shade"></div>
   <div class="tour-hero-inner">
     <div class="tour-hero-region">Odessa · Black Sea</div>
-    <h1>Odessa Seafood Tour</h1>
+    <h1>Odessa Tour</h1>
     <div class="tour-hero-meta">
       <span>⏱ 10–12 hours</span>
       <span>👤 Guide: Cristi</span>
@@ -176,9 +176,9 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <img src="../assets/images/guide-cristi.jpg" alt="Cristi">
       </div>
       <div class="guide-card-info">
-        <h3>Cristi</h3>
-        <div class="role">Odessa Guide · Black Sea Specialist</div>
-        <p>Cristi knows Odessa's layered history, colourful architecture, and legendary food scene. Every trip to the Black Sea becomes a full immersive experience.</p>
+        <h3>Cristian</h3>
+        <div class="role">Odessa Guide</div>
+        <p>Cristian knows Odessa's layered history, colourful architecture, and legendary food scene. Every trip to the Black Sea becomes a full immersive experience.</p>
       </div>
     </div>
 
@@ -190,7 +190,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
         <div class="price-chip"><div class="pc-type">Private</div><div class="pc-val">390€</div></div>
       </div>
       <form onsubmit="sendForm(event)">
-        <input type="hidden" name="tour" value="Odessa Seafood Tour — with Cristi">
+        <input type="hidden" name="tour" value="Odessa Tour — with Cristian">
         <div class="sf-grid">
           <div class="sf-fg"><label>Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="sf-fg"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
@@ -252,7 +252,8 @@ document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.r').forEach(el=>ro.observe(el));
 lbInit();
-function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';btn.disabled=true}
+async function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');const form=e.target;btn.textContent='Sending…';btn.disabled=true;try{const res=await fetch('https://formspree.io/work.jelezoglomaria@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});if(res.ok){btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';}else{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;margin-top:.75rem;cursor:pointer';btn.disabled=false;}}catch{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.disabled=false;}}
 </script>
 </body>
 </html>
+
