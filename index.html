@@ -1466,7 +1466,7 @@ async function sendForm(e){
     const data={};
     new FormData(form).forEach((val,key)=>{data[key]=val});
     data['_subject']='New Booking Request — Gagauzka Tours';
-    const res=await fetch('https://formsubmit.co/ajax/work.jelezoglomaria@gmail.com',{
+    const res=await fetch('https://formsubmit.co/ajax/6ad4070923e75701dc1b28d8d5aa8696',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
