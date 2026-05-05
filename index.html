@@ -1300,6 +1300,73 @@ const TOUR_DATA = {
   }
 };
 
+/* Builder i18n */
+const CAT_TRANS = {
+  ru:{ 'Museum':'Музей','Fortress':'Крепость','City':'Город','Village':'Деревня','Wine':'Вино','History':'История',
+       'Food':'Еда','Monastery':'Монастырь','Fun':'Развлечение','Rural':'Сельский','Heritage':'Наследие',
+       'Culture':'Культура','Craft':'Ремесло','Explore':'Исследование','Farm':'Ферма','Iconic':'Иконическое',
+       'Adventure':'Приключение','Beach':'Пляж','Market':'Рынок','District':'Район','Port':'Порт',
+       'Landmark':'Достопримечательность','Nature':'Природа','Park':'Парк','Soviet':'Советское',
+       'Nightlife':'Ночная жизнь','Local':'Местное','Seafood':'Морепродукты' },
+  ro:{ 'Museum':'Muzeu','Fortress':'Cetate','City':'Oraș','Village':'Sat','Wine':'Vin','History':'Istorie',
+       'Food':'Mâncare','Monastery':'Mănăstire','Fun':'Distracție','Rural':'Rural','Heritage':'Patrimoniu',
+       'Culture':'Cultură','Craft':'Meșteșug','Explore':'Explorare','Farm':'Fermă','Iconic':'Iconic',
+       'Adventure':'Aventură','Beach':'Plajă','Market':'Piață','District':'Cartier','Port':'Port',
+       'Landmark':'Reper','Nature':'Natură','Park':'Parc','Soviet':'Sovietic',
+       'Nightlife':'Viață de noapte','Local':'Local','Seafood':'Fructe de mare' }
+};
+const BLD_NAMES = {
+  ru:{
+    pmr1:'Галерея Петру Костин', pmr2:'Музей советского социализма', pmr3:'Бендерская крепость',
+    pmr4:'Прогулка по Тирасполю', pmr5:'Деревня Чобручи', pmr6:'Деревня Терновка', pmr7:'Деревня Паркань',
+    'pmr-r1':'Ресторан «Назад в СССР»', 'pmr-r2':'Столовая (советская)',
+    md1:'Крикова (Винный завод)', md2:'Орхей Векь', md3:'Деревня Бутучены', md4:'Эко-Резорт Бутучены — Обед',
+    md5:'Ресторан «Каменный Век»', md6:'Монастырь Курки', md7:'Козы — Город коз', md8:'Старая ферма',
+    gag1:'Исторический комплекс Манук-Бей', gag2:'Хынчешты — Советский мемориал', gag3:'Экскурсия по Комрату',
+    gag4:'Винодельня Комрат', gag5:'Деревня Конгаз — Обед', gag6:'Музей Бешалма',
+    gag7:'Чадыр-Лунга — Городская экскурсия', gag8:'Традиционный ужин в Чадыр-Лунге',
+    gag9:'Заброшенный советский аэропорт', gag10:'Конная ферма AT-PROLIN', gag11:'Тарасклия — Болгарский регион',
+    od1:'Исторический центр', od2:'Потёмкинская лестница и Приморский бульвар', od3:'Одесский оперный театр',
+    od4:'Улица Дерибасовская', od5:'Одесские катакомбы', od6:'Пляж Аркадия', od7:'Рынок «Привоз»',
+    od8:'Молдаванка', od9:'Одесский порт', od10:'Дегустация в Шабо', od11:'Обед в Черноморке', od12:'Ресторан «Дача»',
+    chi1:'Собор и Соборный парк', chi2:'Триумфальная арка', chi3:'Бульвар Штефан чел Маре',
+    chi4:'Центральный парк', chi5:'Национальный исторический музей', chi6:'Мэрия и культурный центр',
+    chi7:'Тайный ресторан', chi8:'ЖК «Ромашка»', chi9:'Гостиница «Космос»',
+    chi10:'Вале Морилор — Озеро и памятник Ленину', chi11:'Скрытые коктейльные бары',
+    chi12:'Вокзал и блошиный рынок'
+  },
+  ro:{
+    pmr1:'Galeria Petru Costin', pmr2:'Muzeul în Aer Liber al Socialismului Sovietic', pmr3:'Cetatea Bender',
+    pmr4:'Tur pe jos prin Tiraspol', pmr5:'Satul Ciobruci', pmr6:'Satul Ternovca', pmr7:'Satul Parcani',
+    'pmr-r1':'Restaurantul Back to USSR', 'pmr-r2':'Stolovka (Cantina Sovietică)',
+    md1:'Crama Cricova', md2:'Orheiul Vechi', md3:'Plimbare prin Butuceni', md4:'Eco Resort Butuceni — Prânz',
+    md5:'Restaurantul Epoca de Piatră', md6:'Mănăstirea Curchi', md7:'Kozy — Orașul Caprelor', md8:'Ferma Veche',
+    gag1:'Complexul Istoric Manuc Bei', gag2:'Hâncești — Memorial Sovietic', gag3:'Tur prin Comrat',
+    gag4:'Crama Comrat', gag5:'Satul Congaz — Prânz', gag6:'Muzeul Etnografic Besalma',
+    gag7:'Experiența în Ceadîr-Lunga', gag8:'Cină tradițională în Ceadîr-Lunga',
+    gag9:'Aeroportul Sovietic Abandonat', gag10:'Ferma de Cai AT-PROLIN', gag11:'Taraclia — Regiunea Bulgară',
+    od1:'Centrul Istoric', od2:'Scările Potemkin și Bd. Primorsky', od3:'Opera din Odessa',
+    od4:'Strada Deribasivska', od5:'Catacombele Odessa', od6:'Plaja Arcadia', od7:'Piața Privoz',
+    od8:'Cartierul Moldavanka', od9:'Portul Odessa', od10:'Experiența Cramei Shabo', od11:'Prânz la Chornomorka', od12:'Restaurantul Dacha',
+    chi1:'Parcul și Catedrala', chi2:'Arcul de Triumf', chi3:'Bulevardul Ștefan cel Mare',
+    chi4:'Parcul Central', chi5:'Muzeul Național de Istorie', chi6:'Primăria și Centrul Cultural',
+    chi7:'Restaurant Ascuns', chi8:'Complexul Romanița', chi9:'Hotelul Cosmos',
+    chi10:'Valea Morilor — Lac și Statuia Lenin', chi11:'Baruri de Cocktailuri Ascunse',
+    chi12:'Gara și Piața de Vechituri'
+  }
+};
+
+function bldTransCat(cat, lang) {
+  if (lang === 'en') return cat;
+  const m = cat.match(/^(\S+)\s+(.+)$/);
+  if (!m) return cat;
+  const emoji = m[1], word = m[2];
+  return emoji + ' ' + ((CAT_TRANS[lang] && CAT_TRANS[lang][word]) || word);
+}
+function bldTransName(id, lang) {
+  return (lang !== 'en' && BLD_NAMES[lang] && BLD_NAMES[lang][id]) || null;
+}
+
 let bldDest = 'pmr';
 const bldSel  = { pmr:{}, moldova:{}, gagauzia:{}, odessa:{}, chisinau:{} };
 const bldRest = { pmr:null, moldova:null, gagauzia:null, odessa:null, chisinau:null };
@@ -1332,13 +1399,16 @@ function bldRender(fadeCards) {
     void grid.offsetWidth;
     grid.classList.add('fade');
   }
+  const _bl = currentLang;
   grid.innerHTML = data.options.map(o => {
     const isSel = !!sel[o.id];
     const isDis = !isSel && atLimit;
+    const nameStr = bldTransName(o.id, _bl) || o.name;
+    const catStr  = bldTransCat(o.cat, _bl);
     return `<div class="opt-card${isSel?' selected':''}${isDis?' disabled':''}" onclick="bldToggle('${o.id}')">
       <div class="opt-check">${isSel?'✓':''}</div>
-      <div class="opt-cat">${o.cat}</div>
-      <div class="opt-name">${o.name}</div>
+      <div class="opt-cat">${catStr}</div>
+      <div class="opt-name">${nameStr}</div>
       <div class="opt-desc">${o.desc}</div>
     </div>`;
   }).join('');
@@ -1349,8 +1419,9 @@ function bldRender(fadeCards) {
     restSec.style.display = 'block';
     document.getElementById('restGrid').innerHTML = data.restaurants.map(r => {
       const isSel = bldRest[bldDest] === r.id;
+      const rName = bldTransName(r.id, _bl) || r.name;
       return `<div class="rest-opt${isSel?' selected':''}" onclick="bldSelectRest('${r.id}')">
-        <div class="rest-name">${r.name}</div>
+        <div class="rest-name">${rName}</div>
         <div class="rest-desc">${r.desc}</div>
       </div>`;
     }).join('');
@@ -1492,6 +1563,7 @@ function setLang(lang){
   currentLang=lang;
   applyLang(lang);
   localStorage.setItem('gtLang',lang);
+  bldRender(false);
 }
 
 function applyLang(lang){
