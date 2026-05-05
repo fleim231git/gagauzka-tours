@@ -1399,7 +1399,7 @@ function bldRender(fadeCards) {
     void grid.offsetWidth;
     grid.classList.add('fade');
   }
-  const _bl = currentLang;
+  const _bl = localStorage.getItem('gtLang') || 'en';
   grid.innerHTML = data.options.map(o => {
     const isSel = !!sel[o.id];
     const isDis = !isSel && atLimit;
