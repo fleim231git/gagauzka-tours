@@ -119,6 +119,10 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 .r{opacity:0;transform:translateY(30px);transition:opacity .72s ease,transform .72s ease}
 .r.up{opacity:1;transform:none}
 .r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+.lang-sw{display:flex;align-items:center;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:2px}
+.ls-btn{background:transparent;border:none;color:var(--muted);padding:.3rem .6rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .22s;font-family:'Space Grotesk',sans-serif;line-height:1}
+.ls-btn.active{background:var(--lime);color:var(--dark)}
+.ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
   </style>
 </head>
 <body>
@@ -126,11 +130,12 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <nav id="nav">
   <a href="../index.html" class="logo"><span class="logo-img" role="img" aria-label="Gagauzka Tours"></span><span class="logo-l">Gagauzka Tours</span></a>
   <ul class="nav-links">
-    <li><a href="../index.html#tours">Tours</a></li>
-    <li><a href="../index.html#gallery">Gallery</a></li>
-    <li><a href="../index.html#guides">Guides</a></li>
-    <li><a href="../index.html#reviews">Reviews</a></li>
-    <li><a href="#book" class="nav-book">Book Now</a></li>
+    <li><a href="../index.html#tours" data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</a></li>
+    <li><a href="../index.html#gallery" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a></li>
+    <li><a href="../index.html#guides" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a></li>
+    <li><a href="../index.html#reviews" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a></li>
+    <li><div class="lang-sw"><button class="ls-btn" data-lang="en" onclick="setLang('en')">EN</button><button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button><button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button></div></li>
+    <li><a href="#book" class="nav-book" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a></li>
   </ul>
 </nav>
 
@@ -138,13 +143,13 @@ footer .logo-l{color:rgba(255,255,255,.85)}
   <div class="tour-hero-bg" style="background-image:url('../assets/images/Olea.jpg')"></div>
   <div class="tour-hero-shade"></div>
   <div class="tour-hero-inner">
-    <div class="tour-hero-region">Southern Moldova</div>
-    <h1>Tasty Gagauzia Tour</h1>
+    <div class="tour-hero-region" data-en="Southern Moldova" data-ru="Южная Молдова" data-ro="Moldova de Sud">Southern Moldova</div>
+    <h1 data-en="Tasty Gagauzia Tour" data-ru="Вкусная Гагаузия" data-ro="Turul Gastronomic Găgăuzia">Tasty Gagauzia Tour</h1>
     <div class="tour-hero-meta">
-      <span>⏱ 8 hours</span>
-      <span>👤 Guide: Masha</span>
-      <span>🚗 Transport included</span>
-      <span>🎫 All tickets &amp; lunch included</span>
+      <span>⏱ <span data-en="8 hours" data-ru="8 часов" data-ro="8 ore">8 hours</span></span>
+      <span>👤 <span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></span>
+      <span>🚗 <span data-en="Transport included" data-ru="Транспорт включён" data-ro="Transport inclus">Transport included</span></span>
+      <span>🎫 <span data-en="All tickets &amp; lunch included" data-ru="Все билеты и обед включены" data-ro="Bilete și prânz incluse">All tickets &amp; lunch included</span></span>
     </div>
   </div>
 </section>
@@ -154,13 +159,13 @@ footer .logo-l{color:rgba(255,255,255,.85)}
   <!-- LEFT COLUMN -->
   <div>
     <div class="tour-desc r">
-      <h2>About This Tour</h2>
+      <h2 data-en="About This Tour" data-ru="О туре" data-ro="Despre Acest Tur">About This Tour</h2>
       <p>Discover Gagauzia — a hidden autonomous region in the south of Moldova where Turkic traditions, Soviet heritage, and Moldovan hospitality blend into a world few outsiders ever see. Walk through the capital Comrat, explore a local market, visit a winery, and end the day with a visit to a local family.</p>
       <p>This is not a standard sightseeing tour — it's a full 8-hour immersion into the daily life, traditions, and stories of one of Europe's most fascinating hidden communities.</p>
     </div>
 
     <div class="r d1">
-      <h3 class="stops-title">Main Stops</h3>
+      <h3 class="stops-title" data-en="Main Stops" data-ru="Основные остановки" data-ro="Opriri Principale">Main Stops</h3>
       <ul class="stop-list">
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Manuc Bey Mansion</h4><p>Restored noble estate with palaces, towers, and historic park areas.</p></div></li>
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Comrat City</h4><p>Guided experience in Gagauzia's capital — main square, cultural landmarks, city identity.</p></div></li>
@@ -189,21 +194,21 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     </div>
 
     <div class="sidebar-form r d3">
-      <h3>Book This Tour</h3>
-      <p class="sub"><span class="live-dot"></span>We respond within 3 hours · No prepayment</p>
+      <h3 data-en="Book This Tour" data-ru="Забронировать тур" data-ro="Rezervă Turul">Book This Tour</h3>
+      <p class="sub"><span class="live-dot"></span><span data-en="We respond within 3 hours · No prepayment" data-ru="Ответим за 3 часа · Без предоплаты" data-ro="Răspundem în 3 ore · Fără avans">We respond within 3 hours · No prepayment</span></p>
       <div class="prices-row">
-        <div class="price-chip"><div class="pc-type">Shared (2+)</div><div class="pc-val">180€</div></div>
-        <div class="price-chip"><div class="pc-type">Private</div><div class="pc-val">300€</div></div>
+        <div class="price-chip"><div class="pc-type" data-en="Shared (2+)" data-ru="Группа (2+)" data-ro="Grup (2+)">Shared (2+)</div><div class="pc-val">180€</div></div>
+        <div class="price-chip"><div class="pc-type" data-en="Private" data-ru="Приватный" data-ro="Privat">Private</div><div class="pc-val">300€</div></div>
       </div>
       <form onsubmit="sendForm(event)">
         <input type="hidden" name="tour" value="Tasty Gagauzia Tour — with Masha">
         <div class="sf-grid">
-          <div class="sf-fg"><label>Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div class="sf-fg"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
-          <div class="sf-fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
-          <div class="sf-fg"><label>Preferred Date</label><input type="date" name="date"></div>
+          <div class="sf-fg"><label data-en="Full Name *" data-ru="Имя *" data-ro="Nume *">Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div class="sf-fg"><label data-en="Email *" data-ru="Email *" data-ro="Email *">Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
+          <div class="sf-fg"><label data-en="WhatsApp / Phone" data-ru="WhatsApp / Тел." data-ro="WhatsApp / Tel.">WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
+          <div class="sf-fg"><label data-en="Preferred Date" data-ru="Дата" data-ro="Data">Preferred Date</label><input type="date" name="date"></div>
           <div class="sf-fg">
-            <label>Tour Type *</label>
+            <label data-en="Tour Type *" data-ru="Тип тура *" data-ro="Tip tur *">Tour Type *</label>
             <select name="type" required>
               <option value="" disabled selected>Select type</option>
               <option>Shared (2+) — 180€</option>
@@ -211,24 +216,24 @@ footer .logo-l{color:rgba(255,255,255,.85)}
             </select>
           </div>
           <div class="sf-fg">
-            <label>Group Size</label>
+            <label data-en="Group Size" data-ru="Размер группы" data-ro="Mărimea grupului">Group Size</label>
             <select name="size">
               <option>1 person</option><option>2 people</option><option>3 people</option>
               <option>4 people</option><option>5 people</option><option>6 people</option><option>7 people</option>
               <option value="custom">Custom</option>
             </select>
           </div>
-          <div class="sf-fg full"><label>Notes</label><textarea name="notes" placeholder="Dietary restrictions, optional add-ons, anything we should know…"></textarea></div>
+          <div class="sf-fg full"><label data-en="Notes" data-ru="Заметки" data-ro="Note">Notes</label><textarea name="notes" placeholder="Dietary restrictions, optional add-ons, anything we should know…"></textarea></div>
         </div>
-        <button type="submit" class="sf-submit" id="submitBtn">Send Request →</button>
-        <p class="sf-foot">No spam — only tour confirmation details.</p>
+        <button type="submit" class="sf-submit" id="submitBtn" data-en="Send Request →" data-ru="Отправить →" data-ro="Trimite →">Send Request →</button>
+        <p class="sf-foot" data-en="No spam — only tour confirmation details." data-ru="Без спама — только детали тура." data-ro="Fără spam — doar confirmare.">No spam — only tour confirmation details.</p>
       </form>
     </div>
   </div>
 </div>
 
 <section class="tour-gallery">
-  <div class="tg-head r"><h2>Tour Gallery</h2></div>
+  <div class="tg-head r"><h2 data-en="Tour Gallery" data-ru="Галерея тура" data-ro="Galeria Turului">Tour Gallery</h2></div>
   <div class="tg-grid">
     <div class="tg-item r"><img src="../assets/images/Olea.jpg" alt="Gagauzia"></div>
     <div class="tg-item r d1"><img src="../assets/images/gallery-feast.jpg" alt="Traditional feast"></div>
@@ -258,6 +263,9 @@ document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.r').forEach(el=>ro.observe(el));
 lbInit();
+function setLang(lang){localStorage.setItem('gtLang',lang);applyLang(lang);}
+function applyLang(lang){document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=lang==='ru'?(el.dataset.ru||el.dataset.en):lang==='ro'?(el.dataset.ro||el.dataset.en):el.dataset.en;});document.querySelectorAll('[data-en-html]').forEach(el=>{el.innerHTML=lang==='ru'?(el.dataset.ruHtml||el.dataset.enHtml):lang==='ro'?(el.dataset.roHtml||el.dataset.enHtml):el.dataset.enHtml;});document.querySelectorAll('.ls-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===lang);});document.documentElement.lang=lang;}
+const _lang=localStorage.getItem('gtLang')||'en';applyLang(_lang);
 async function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');const form=e.target;btn.textContent='Sending…';btn.disabled=true;try{const data={};new FormData(form).forEach((val,key)=>{data[key]=val});data['_subject']='New Booking — Gagauzka Tours';const res=await fetch('https://formsubmit.co/ajax/6ad4070923e75701dc1b28d8d5aa8696',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});if(res.ok){btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';}else{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;margin-top:.75rem;cursor:pointer';btn.disabled=false;}}catch{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.disabled=false;}}
 </script>
 </body>

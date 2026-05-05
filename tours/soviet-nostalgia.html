@@ -23,25 +23,37 @@
 #lightbox{position:fixed;inset:0;z-index:999;background:rgba(10,10,8,.92);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;cursor:zoom-out}#lightbox.open{display:flex;opacity:1}#lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;object-fit:contain;cursor:default}.lb-close{position:absolute;top:1.5rem;right:2rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer}.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer}.lb-prev{left:1.5rem}.lb-next{right:1.5rem}
 footer{background:var(--dark);padding:2.5rem 3rem}.ft-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.77rem;color:rgba(255,255,255,.3)}footer .logo-l{color:rgba(255,255,255,.85)}@media(max-width:900px){footer{padding:2rem 1.5rem}.ft-inner{flex-direction:column;gap:.6rem;text-align:center}}
 .r{opacity:0;transform:translateY(30px);transition:opacity .72s ease,transform .72s ease}.r.up{opacity:1;transform:none}.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+.lang-sw{display:flex;align-items:center;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:2px}.ls-btn{background:transparent;border:none;color:var(--muted);padding:.3rem .6rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .22s;font-family:'Space Grotesk',sans-serif;line-height:1}.ls-btn.active{background:var(--lime);color:var(--dark)}.ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
   </style>
 </head>
 <body>
 <nav id="nav">
   <a href="../index.html" class="logo"><span class="logo-img" role="img" aria-label="Gagauzka Tours"></span><span class="logo-l">Gagauzka Tours</span></a>
-  <ul class="nav-links"><li><a href="../index.html#tours">Tours</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../index.html#guides">Guides</a></li><li><a href="../index.html#reviews">Reviews</a></li><li><a href="#book" class="nav-book">Book Now</a></li></ul>
+  <ul class="nav-links">
+    <li><a href="../index.html#tours" data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</a></li>
+    <li><a href="../index.html#gallery" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a></li>
+    <li><a href="../index.html#guides" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a></li>
+    <li><a href="../index.html#reviews" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a></li>
+    <li><a href="#book" class="nav-book" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a></li>
+  </ul>
+  <div class="lang-sw">
+    <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+    <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
+  </div>
 </nav>
 
 <section class="tour-hero">
   <div class="tour-hero-bg" style="background-image:url('../assets/images/photo_2026-04-29_11-16-31.jpg')"></div>
   <div class="tour-hero-shade"></div>
   <div class="tour-hero-inner">
-    <div class="tour-hero-region">Transnistria · PMR</div>
-    <h1>Back to USSR Tour</h1>
+    <div class="tour-hero-region" data-en="Transnistria · PMR" data-ru="Приднестровье · ПМР" data-ro="Transnistria · RMN">Transnistria · PMR</div>
+    <h1 data-en="Back to USSR Tour" data-ru="Тур «Назад в СССР»" data-ro="Tur Înapoi în URSS">Back to USSR Tour</h1>
     <div class="tour-hero-meta">
-      <span>⏱ Full day</span>
-      <span>👤 Guide: Masha</span>
-      <span>🚗 Transport included</span>
-      <span>🎫 Tickets · Lunch · Wine tasting included</span>
+      <span>⏱ <span data-en="Full day" data-ru="Полный день" data-ro="Zi întreagă">Full day</span></span>
+      <span>👤 <span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></span>
+      <span>🚗 <span data-en="Transport included" data-ru="Транспорт включён" data-ro="Transport inclus">Transport included</span></span>
+      <span>🎫 <span data-en="Tickets · Lunch · Wine tasting included" data-ru="Билеты · Обед · Дегустация вина включены" data-ro="Bilete · Prânz · Degustare de vin incluse">Tickets · Lunch · Wine tasting included</span></span>
     </div>
   </div>
 </section>
@@ -50,12 +62,12 @@ footer{background:var(--dark);padding:2.5rem 3rem}.ft-inner{max-width:1280px;mar
 <div class="tour-wrap">
   <div>
     <div class="tour-desc r">
-      <h2>About This Tour</h2>
-      <p>Cross the border into Transnistria — a breakaway state where the Soviet Union never ended. Walk streets lined with Lenin statues, visit a fortress, explore a bottle museum, and taste wine from local cellars. Time stands still here — and Masha will bring it all to life.</p>
-      <p>One of the most unique experiences in Eastern Europe — a living museum of Soviet life, complete with its own currency, flag, and border checkpoints.</p>
+      <h2 data-en="About This Tour" data-ru="О туре" data-ro="Despre Acest Tur">About This Tour</h2>
+      <p data-en="Cross the border into Transnistria — a breakaway state where the Soviet Union never ended. Walk streets lined with Lenin statues, visit a fortress, explore a bottle museum, and taste wine from local cellars. Time stands still here — and Masha will bring it all to life." data-ru="Пересеките границу в Приднестровье — непризнанное государство, где советский союз никогда не закончился. Улицы с памятниками Ленину, крепость, музей бутылок и дегустация местного вина. Маша оживит каждый уголок этого уникального места." data-ro="Treceți granița în Transnistria — un stat nerecunoscut unde Uniunea Sovietică nu s-a terminat niciodată. Străzi cu statui ale lui Lenin, o fortăreață, un muzeu al sticlelor și degustare de vinuri locale. Masha va da viață fiecărui colț al acestui loc unic.">Cross the border into Transnistria — a breakaway state where the Soviet Union never ended. Walk streets lined with Lenin statues, visit a fortress, explore a bottle museum, and taste wine from local cellars. Time stands still here — and Masha will bring it all to life.</p>
+      <p data-en="One of the most unique experiences in Eastern Europe — a living museum of Soviet life, complete with its own currency, flag, and border checkpoints." data-ru="Один из самых уникальных опытов в Восточной Европе — живой музей советской жизни со своей валютой, флагом и пограничными пунктами." data-ro="Una dintre cele mai unice experiențe din Europa de Est — un muzeu viu al vieții sovietice, cu propria monedă, steag și posturi de frontieră.">One of the most unique experiences in Eastern Europe — a living museum of Soviet life, complete with its own currency, flag, and border checkpoints.</p>
     </div>
     <div class="r d1">
-      <h3 class="stops-title">Main Stops</h3>
+      <h3 class="stops-title" data-en="Main Stops" data-ru="Основные остановки" data-ro="Opriri Principale">Main Stops</h3>
       <ul class="stop-list">
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Bender Fortress</h4><p>Historic 16th-century fortress on the Dniester River — Ottoman and Eastern European heritage.</p></div></li>
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Tiraspol Walking Tour</h4><p>Main Square, government buildings, Soviet monuments, and central urban landmarks.</p></div></li>
@@ -74,8 +86,8 @@ footer{background:var(--dark);padding:2.5rem 3rem}.ft-inner{max-width:1280px;mar
       <div class="guide-card-info"><h3>Masha</h3><div class="role">Lead Guide · Soviet History Specialist</div><p>A passionate storyteller who brings the hidden history and everyday reality of Transnistria to life.</p></div>
     </div>
     <div class="sidebar-form r d3">
-      <h3>Book This Tour</h3>
-      <p class="sub"><span class="live-dot"></span>We respond within 3 hours · No prepayment</p>
+      <h3 data-en="Book This Tour" data-ru="Забронировать тур" data-ro="Rezervă Acest Tur">Book This Tour</h3>
+      <p class="sub"><span class="live-dot"></span><span data-en="We respond within 3 hours · No prepayment" data-ru="Отвечаем в течение 3 часов · Без предоплаты" data-ro="Răspundem în 3 ore · Fără avans">We respond within 3 hours · No prepayment</span></p>
       <div class="prices-row">
         <div class="price-chip"><div class="pc-type">Shared (2+)</div><div class="pc-val">180€</div></div>
         <div class="price-chip"><div class="pc-type">Private</div><div class="pc-val">300€</div></div>
@@ -83,23 +95,23 @@ footer{background:var(--dark);padding:2.5rem 3rem}.ft-inner{max-width:1280px;mar
       <form onsubmit="sendForm(event)">
         <input type="hidden" name="tour" value="Back to USSR Tour — with Masha">
         <div class="sf-grid">
-          <div class="sf-fg"><label>Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div class="sf-fg"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
-          <div class="sf-fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
-          <div class="sf-fg"><label>Preferred Date</label><input type="date" name="date"></div>
-          <div class="sf-fg"><label>Tour Type *</label><select name="type" required><option value="" disabled selected>Select type</option><option>Shared (2+) — 180€</option><option>Private — 300€</option></select></div>
-          <div class="sf-fg"><label>Group Size</label><select name="size"><option>1 person</option><option>2 people</option><option>3 people</option><option>4 people</option><option>5 people</option><option>6 people</option><option>7 people</option><option value="custom">Custom</option></select></div>
-          <div class="sf-fg full"><label>Notes</label><textarea name="notes" placeholder="Optional Ciobruci village (+50€), dietary restrictions…"></textarea></div>
+          <div class="sf-fg"><label data-en="Full Name *" data-ru="Полное имя *" data-ro="Nume complet *">Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div class="sf-fg"><label data-en="Email *" data-ru="Email *" data-ro="Email *">Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
+          <div class="sf-fg"><label data-en="WhatsApp / Phone" data-ru="WhatsApp / Телефон" data-ro="WhatsApp / Telefon">WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
+          <div class="sf-fg"><label data-en="Preferred Date" data-ru="Желаемая дата" data-ro="Data preferată">Preferred Date</label><input type="date" name="date"></div>
+          <div class="sf-fg"><label data-en="Tour Type *" data-ru="Тип тура *" data-ro="Tip de tur *">Tour Type *</label><select name="type" required><option value="" disabled selected data-en="Select type" data-ru="Выберите тип" data-ro="Selectați tipul">Select type</option><option>Shared (2+) — 180€</option><option>Private — 300€</option></select></div>
+          <div class="sf-fg"><label data-en="Group Size" data-ru="Размер группы" data-ro="Mărimea grupului">Group Size</label><select name="size"><option data-en="1 person" data-ru="1 человек" data-ro="1 persoană">1 person</option><option data-en="2 people" data-ru="2 человека" data-ro="2 persoane">2 people</option><option data-en="3 people" data-ru="3 человека" data-ro="3 persoane">3 people</option><option data-en="4 people" data-ru="4 человека" data-ro="4 persoane">4 people</option><option data-en="5 people" data-ru="5 человек" data-ro="5 persoane">5 people</option><option data-en="6 people" data-ru="6 человек" data-ro="6 persoane">6 people</option><option data-en="7 people" data-ru="7 человек" data-ro="7 persoane">7 people</option></select></div>
+          <div class="sf-fg full"><label data-en="Notes" data-ru="Примечания" data-ro="Note">Notes</label><textarea name="notes" placeholder="Optional Ciobruci village (+50€), dietary restrictions…"></textarea></div>
         </div>
-        <button type="submit" class="sf-submit" id="submitBtn">Send Request →</button>
-        <p class="sf-foot">No spam — only tour confirmation details.</p>
+        <button type="submit" class="sf-submit" id="submitBtn" data-en="Send Request →" data-ru="Отправить заявку →" data-ro="Trimite cererea →">Send Request →</button>
+        <p class="sf-foot" data-en="No spam — only tour confirmation details." data-ru="Без спама — только подтверждение тура." data-ro="Fără spam — doar detalii de confirmare.">No spam — only tour confirmation details.</p>
       </form>
     </div>
   </div>
 </div>
 
 <section class="tour-gallery">
-  <div class="tg-head r"><h2>Tour Gallery</h2></div>
+  <div class="tg-head r"><h2 data-en="Tour Gallery" data-ru="Галерея тура" data-ro="Galeria Turului">Tour Gallery</h2></div>
   <div class="tg-grid">
     <div class="tg-item r"><img src="../assets/images/photo_2026-04-29_11-16-31.jpg" alt="Transnistria"></div>
     <div class="tg-item r d1"><img src="../assets/images/gallery-soviet-museum.jpg" alt="Soviet museum"></div>
@@ -115,6 +127,9 @@ footer{background:var(--dark);padding:2.5rem 3rem}.ft-inner{max-width:1280px;mar
 <script>
 let lbImages=[],lbIdx=0;function lbInit(){lbImages=Array.from(document.querySelectorAll('.tg-item img')).map(i=>i.src);document.querySelectorAll('.tg-item').forEach((gi,i)=>{gi.addEventListener('click',()=>lbOpen(i))})}function lbOpen(i){lbIdx=i;document.getElementById('lbImg').src=lbImages[i];const lb=document.getElementById('lightbox');lb.style.display='flex';requestAnimationFrame(()=>lb.classList.add('open'));document.body.style.overflow='hidden'}function lbClose(e){if(e.target.tagName==='IMG'||e.target.classList.contains('lb-nav'))return;const lb=document.getElementById('lightbox');lb.classList.remove('open');setTimeout(()=>{lb.style.display='none'},300);document.body.style.overflow=''}function lbNav(e,dir){e.stopPropagation();lbIdx=(lbIdx+dir+lbImages.length)%lbImages.length;document.getElementById('lbImg').src=lbImages[lbIdx]}document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='Escape')lbClose(e);if(e.key==='ArrowLeft')lbNav(e,-1);if(e.key==='ArrowRight')lbNav(e,1)});
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.r').forEach(el=>ro.observe(el));lbInit();
+function setLang(lang){localStorage.setItem('gtLang',lang);applyLang(lang);}
+function applyLang(lang){document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=lang==='ru'?(el.dataset.ru||el.dataset.en):lang==='ro'?(el.dataset.ro||el.dataset.en):el.dataset.en;});document.querySelectorAll('[data-en-html]').forEach(el=>{el.innerHTML=lang==='ru'?(el.dataset.ruHtml||el.dataset.enHtml):lang==='ro'?(el.dataset.roHtml||el.dataset.enHtml):el.dataset.enHtml;});document.querySelectorAll('.ls-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===lang);});document.documentElement.lang=lang;}
+const _lang=localStorage.getItem('gtLang')||'en';applyLang(_lang);
 async function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');const form=e.target;btn.textContent='Sending…';btn.disabled=true;try{const data={};new FormData(form).forEach((val,key)=>{data[key]=val});data['_subject']='New Booking — Gagauzka Tours';const res=await fetch('https://formsubmit.co/ajax/6ad4070923e75701dc1b28d8d5aa8696',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});if(res.ok){btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';}else{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;margin-top:.75rem;cursor:pointer';btn.disabled=false;}}catch{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.disabled=false;}}
 </script>
 </body>

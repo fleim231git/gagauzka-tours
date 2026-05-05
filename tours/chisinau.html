@@ -116,6 +116,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 .r{opacity:0;transform:translateY(30px);transition:opacity .72s ease,transform .72s ease}
 .r.up{opacity:1;transform:none}
 .r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+.lang-sw{display:flex;align-items:center;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:2px}.ls-btn{background:transparent;border:none;color:var(--muted);padding:.3rem .6rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .22s;font-family:'Space Grotesk',sans-serif;line-height:1}.ls-btn.active{background:var(--lime);color:var(--dark)}.ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
   </style>
 </head>
 <body>
@@ -123,24 +124,29 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 <nav id="nav">
   <a href="../index.html" class="logo"><span class="logo-img" role="img" aria-label="Gagauzka Tours"></span><span class="logo-l">Gagauzka Tours</span></a>
   <ul class="nav-links">
-    <li><a href="../index.html#tours">Tours</a></li>
-    <li><a href="../index.html#gallery">Gallery</a></li>
-    <li><a href="../index.html#guides">Guides</a></li>
-    <li><a href="../index.html#reviews">Reviews</a></li>
-    <li><a href="#book" class="nav-book">Book Now</a></li>
+    <li><a href="../index.html#tours" data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</a></li>
+    <li><a href="../index.html#gallery" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a></li>
+    <li><a href="../index.html#guides" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a></li>
+    <li><a href="../index.html#reviews" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a></li>
+    <li><a href="#book" class="nav-book" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a></li>
   </ul>
+  <div class="lang-sw">
+    <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+    <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
+  </div>
 </nav>
 
 <section class="tour-hero">
   <div class="tour-hero-bg" style="background-image:url('../assets/images/gallery-night-chisinau.jpg')"></div>
   <div class="tour-hero-shade"></div>
   <div class="tour-hero-inner">
-    <div class="tour-hero-region">Chișinău · Moldova</div>
-    <h1>Chișinău City Tour</h1>
+    <div class="tour-hero-region" data-en="Chișinău · Moldova" data-ru="Кишинёв · Молдова" data-ro="Chișinău · Moldova">Chișinău · Moldova</div>
+    <h1 data-en="Chișinău City Tour" data-ru="Тур по Кишинёву" data-ro="Tur prin Chișinău">Chișinău City Tour</h1>
     <div class="tour-hero-meta">
-      <span>⏱ 3 hours</span>
-      <span>👤 Guide: Masha</span>
-      <span>🚶 Walking tour</span>
+      <span>⏱ <span data-en="3 hours" data-ru="3 часа" data-ro="3 ore">3 hours</span></span>
+      <span>👤 <span data-en="Guide: Masha" data-ru="Гид: Маша" data-ro="Ghid: Masha">Guide: Masha</span></span>
+      <span>🚶 <span data-en="Walking tour" data-ru="Пешеходная прогулка" data-ro="Tur pe jos">Walking tour</span></span>
     </div>
   </div>
 </section>
@@ -150,13 +156,13 @@ footer .logo-l{color:rgba(255,255,255,.85)}
   <!-- LEFT COLUMN -->
   <div>
     <div class="tour-desc r">
-      <h2>About This Tour</h2>
-      <p>See Chișinău through the eyes of a local. From Soviet-era architecture and vibrant food markets to hidden gems and secret restaurants — this is Moldova's capital as you've never seen it before.</p>
-      <p>In just 3 hours, Masha will take you through the city's most iconic landmarks, share the stories behind the architecture, and finish the walk at a truly special hidden restaurant — a place with a concept so unique you won't find it in any guidebook.</p>
+      <h2 data-en="About This Tour" data-ru="О туре" data-ro="Despre Acest Tur">About This Tour</h2>
+      <p data-en="See Chișinău through the eyes of a local. From Soviet-era architecture and vibrant food markets to hidden gems and secret restaurants — this is Moldova's capital as you've never seen it before." data-ru="Увидьте Кишинёв глазами местного жителя. Советская архитектура, живые рынки, скрытые жемчужины и секретные рестораны — столица Молдовы, какой вы её ещё не видели." data-ro="Vedeți Chișinăul prin ochii unui localnic. De la arhitectura sovietică și piețele vibrante la bijuterii ascunse și restaurante secrete — capitala Moldovei cum nu ați mai văzut-o.">See Chișinău through the eyes of a local. From Soviet-era architecture and vibrant food markets to hidden gems and secret restaurants — this is Moldova's capital as you've never seen it before.</p>
+      <p data-en="In just 3 hours, Masha will take you through the city's most iconic landmarks, share the stories behind the architecture, and finish the walk at a truly special hidden restaurant — a place with a concept so unique you won't find it in any guidebook." data-ru="Всего за 3 часа Маша проведёт вас по самым знаковым достопримечательностям, расскажет истории за архитектурой и завершит прогулку в особенном скрытом ресторане — месте с таким уникальным концептом, что его нет ни в одном путеводителе." data-ro="În doar 3 ore, Masha vă va duce prin cele mai iconice repere ale orașului, vă va împărtăși poveștile din spatele arhitecturii și va încheia plimbarea la un restaurant ascuns cu totul special — un loc cu un concept atât de unic încât nu îl veți găsi în niciun ghid turistic.">In just 3 hours, Masha will take you through the city's most iconic landmarks, share the stories behind the architecture, and finish the walk at a truly special hidden restaurant — a place with a concept so unique you won't find it in any guidebook.</p>
     </div>
 
     <div class="r d1">
-      <h3 class="stops-title">Main Stops</h3>
+      <h3 class="stops-title" data-en="Main Stops" data-ru="Основные остановки" data-ro="Opriri Principale">Main Stops</h3>
       <ul class="stop-list">
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Cathedral Park &amp; Cathedral</h4><p>Main spiritual and historical center with Orthodox Cathedral and surrounding park.</p></div></li>
         <li class="stop-item"><span class="stop-dot"></span><div class="stop-info"><h4>Arch of Triumph</h4><p>One of the main symbols of the capital and a key historical landmark.</p></div></li>
@@ -182,8 +188,8 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     </div>
 
     <div class="sidebar-form r d3">
-      <h3>Book This Tour</h3>
-      <p class="sub"><span class="live-dot"></span>We respond within 3 hours · No prepayment</p>
+      <h3 data-en="Book This Tour" data-ru="Забронировать тур" data-ro="Rezervă Acest Tur">Book This Tour</h3>
+      <p class="sub"><span class="live-dot"></span><span data-en="We respond within 3 hours · No prepayment" data-ru="Отвечаем в течение 3 часов · Без предоплаты" data-ro="Răspundem în 3 ore · Fără avans">We respond within 3 hours · No prepayment</span></p>
       <div class="prices-row">
         <div class="price-chip"><div class="pc-type">Shared (2+)</div><div class="pc-val">50€</div></div>
         <div class="price-chip"><div class="pc-type">Private</div><div class="pc-val">100€</div></div>
@@ -191,37 +197,41 @@ footer .logo-l{color:rgba(255,255,255,.85)}
       <form onsubmit="sendForm(event)">
         <input type="hidden" name="tour" value="Chișinău City Tour — with Masha">
         <div class="sf-grid">
-          <div class="sf-fg"><label>Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div class="sf-fg"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
-          <div class="sf-fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
-          <div class="sf-fg"><label>Preferred Date</label><input type="date" name="date"></div>
+          <div class="sf-fg"><label data-en="Full Name *" data-ru="Полное имя *" data-ro="Nume complet *">Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div class="sf-fg"><label data-en="Email *" data-ru="Email *" data-ro="Email *">Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
+          <div class="sf-fg"><label data-en="WhatsApp / Phone" data-ru="WhatsApp / Телефон" data-ro="WhatsApp / Telefon">WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+373 …"></div>
+          <div class="sf-fg"><label data-en="Preferred Date" data-ru="Желаемая дата" data-ro="Data preferată">Preferred Date</label><input type="date" name="date"></div>
           <div class="sf-fg">
-            <label>Tour Type *</label>
+            <label data-en="Tour Type *" data-ru="Тип тура *" data-ro="Tip de tur *">Tour Type *</label>
             <select name="type" required>
-              <option value="" disabled selected>Select type</option>
+              <option value="" disabled selected data-en="Select type" data-ru="Выберите тип" data-ro="Selectați tipul">Select type</option>
               <option>Shared (2+) — 50€</option>
               <option>Private — 100€</option>
             </select>
           </div>
           <div class="sf-fg">
-            <label>Group Size</label>
+            <label data-en="Group Size" data-ru="Размер группы" data-ro="Mărimea grupului">Group Size</label>
             <select name="size">
-              <option>1 person</option><option>2 people</option><option>3 people</option>
-              <option>4 people</option><option>5 people</option><option>6 people</option><option>7 people</option>
-              <option value="custom">Custom</option>
+              <option data-en="1 person" data-ru="1 человек" data-ro="1 persoană">1 person</option>
+              <option data-en="2 people" data-ru="2 человека" data-ro="2 persoane">2 people</option>
+              <option data-en="3 people" data-ru="3 человека" data-ro="3 persoane">3 people</option>
+              <option data-en="4 people" data-ru="4 человека" data-ro="4 persoane">4 people</option>
+              <option data-en="5 people" data-ru="5 человек" data-ro="5 persoane">5 people</option>
+              <option data-en="6 people" data-ru="6 человек" data-ro="6 persoane">6 people</option>
+              <option data-en="7 people" data-ru="7 человек" data-ro="7 persoane">7 people</option>
             </select>
           </div>
-          <div class="sf-fg full"><label>Notes</label><textarea name="notes" placeholder="Dietary restrictions, questions, anything we should know…"></textarea></div>
+          <div class="sf-fg full"><label data-en="Notes" data-ru="Примечания" data-ro="Note">Notes</label><textarea name="notes" placeholder="Dietary restrictions, questions, anything we should know…"></textarea></div>
         </div>
-        <button type="submit" class="sf-submit" id="submitBtn">Send Request →</button>
-        <p class="sf-foot">No spam — only tour confirmation details.</p>
+        <button type="submit" class="sf-submit" id="submitBtn" data-en="Send Request →" data-ru="Отправить заявку →" data-ro="Trimite cererea →">Send Request →</button>
+        <p class="sf-foot" data-en="No spam — only tour confirmation details." data-ru="Без спама — только подтверждение тура." data-ro="Fără spam — doar detalii de confirmare.">No spam — only tour confirmation details.</p>
       </form>
     </div>
   </div>
 </div>
 
 <section class="tour-gallery">
-  <div class="tg-head r"><h2>Tour Gallery</h2></div>
+  <div class="tg-head r"><h2 data-en="Tour Gallery" data-ru="Галерея тура" data-ro="Galeria Turului">Tour Gallery</h2></div>
   <div class="tg-grid">
     <div class="tg-item r"><img src="../assets/images/gallery-night-chisinau.jpg" alt="Chișinău at night"></div>
     <div class="tg-item r d1"><img src="../assets/images/gallery-historic-building.jpg" alt="Historic building"></div>
@@ -251,6 +261,9 @@ document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.r').forEach(el=>ro.observe(el));
 lbInit();
+function setLang(lang){localStorage.setItem('gtLang',lang);applyLang(lang);}
+function applyLang(lang){document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=lang==='ru'?(el.dataset.ru||el.dataset.en):lang==='ro'?(el.dataset.ro||el.dataset.en):el.dataset.en;});document.querySelectorAll('[data-en-html]').forEach(el=>{el.innerHTML=lang==='ru'?(el.dataset.ruHtml||el.dataset.enHtml):lang==='ro'?(el.dataset.roHtml||el.dataset.enHtml):el.dataset.enHtml;});document.querySelectorAll('.ls-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===lang);});document.documentElement.lang=lang;}
+const _lang=localStorage.getItem('gtLang')||'en';applyLang(_lang);
 async function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');const form=e.target;btn.textContent='Sending…';btn.disabled=true;try{const data={};new FormData(form).forEach((val,key)=>{data[key]=val});data['_subject']='New Booking — Gagauzka Tours';const res=await fetch('https://formsubmit.co/ajax/6ad4070923e75701dc1b28d8d5aa8696',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});if(res.ok){btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';}else{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;margin-top:.75rem;cursor:pointer';btn.disabled=false;}}catch{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.disabled=false;}}
 </script>
 </body>
