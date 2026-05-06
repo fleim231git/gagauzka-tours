@@ -100,6 +100,22 @@ footer .logo-img{width:64px;height:64px;}
 .ls-btn:hover:not(.active){background:rgba(255,255,255,.18);color:#fff}
 #nav.scrolled .ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
 
+/* ── MOBILE BURGER + MENU ── */
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:5px;width:34px;height:34px;flex-shrink:0;margin-left:6px}
+.burger span{display:block;width:22px;height:2px;border-radius:2px;background:rgba(255,255,255,.85);transition:all .3s}
+#nav.scrolled .burger span{background:var(--dark)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{position:fixed;top:0;left:0;right:0;z-index:98;background:rgba(22,18,38,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:74px 2rem 2.5rem;display:none;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08);transform:translateY(-110%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
+.mob-menu.open{transform:translateY(0)}
+.mob-menu a{font-size:1rem;font-weight:600;color:rgba(255,255,255,.65);padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:block;transition:color .2s;text-decoration:none}
+.mob-menu a:hover,.mob-menu a:active{color:#fff}
+.mob-book-lnk{background:var(--lime)!important;color:var(--dark)!important;text-align:center;border-radius:100px;border-bottom:none!important;margin-top:1rem;font-weight:700!important;padding:.9rem 0!important}
+.mob-lang-row{display:flex;gap:6px;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.mob-lang-row button{flex:1;padding:.55rem;border-radius:100px;border:1.5px solid rgba(255,255,255,.15);background:transparent;font-weight:700;font-size:.75rem;cursor:pointer;font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.5);transition:all .2s;letter-spacing:.06em}
+.mob-lang-row button.active{background:var(--lime);color:var(--dark);border-color:var(--lime)}
+
 /* ════════════════════════════════
    HERO  (dark overlay on photo)
 ════════════════════════════════ */
@@ -519,6 +535,9 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 @media(max-width:900px){
   #nav{padding:1.2rem 1.5rem}#nav.scrolled{padding:.85rem 1.5rem}
   .nav-links{display:none}
+  .burger{display:flex}
+  .mob-menu{display:flex}
+  .logo-l{display:none}
   .hero-inner{padding:0 1.5rem;padding-top:4.5rem}.trail-svg{display:none}
   .stats-row{grid-template-columns:repeat(2,1fr);padding:0 1.5rem}
   .stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border)}
@@ -607,16 +626,30 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     <li><a href="#gallery" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a></li>
     <li><a href="#guides" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a></li>
     <li><a href="#reviews" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a></li>
-    <li>
-      <div class="lang-sw" id="langSw">
-        <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-        <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
-        <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
-      </div>
-    </li>
     <li><a href="#booking" class="nav-book" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a></li>
   </ul>
+  <div class="lang-sw" id="langSw">
+    <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+    <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" onclick="burgerToggle()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#tours" onclick="burgerClose()" data-en="Tours" data-ru="Туры" data-ro="Tururi">Tours</a>
+  <a href="#builder" onclick="burgerClose()" data-en="Build Your Tour" data-ru="Составь тур" data-ro="Creează Turul">Build Your Tour</a>
+  <a href="#gallery" onclick="burgerClose()" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a>
+  <a href="#guides" onclick="burgerClose()" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a>
+  <a href="#reviews" onclick="burgerClose()" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a>
+  <a href="#booking" class="mob-book-lnk" onclick="burgerClose()" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a>
+  <div class="mob-lang-row">
+    <button class="mob-ls active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="mob-ls" data-lang="ru" onclick="setLang('ru')">RU</button>
+    <button class="mob-ls" data-lang="ro" onclick="setLang('ro')">RO</button>
+  </div>
+</div>
 
 
 <!-- ═══ HERO ════════════════════════════════════ -->
@@ -1581,11 +1614,23 @@ function applyLang(lang){
               : el.dataset.enHtml;
     el.innerHTML=val;
   });
-  // Highlight active lang button
-  document.querySelectorAll('.ls-btn').forEach(btn=>{
+  // Highlight active lang button (desktop + mobile)
+  document.querySelectorAll('.ls-btn,.mob-ls').forEach(btn=>{
     btn.classList.toggle('active', btn.dataset.lang===lang);
   });
   document.documentElement.lang=lang;
+}
+
+function burgerToggle(){
+  const m=document.getElementById('mobMenu'),b=document.getElementById('burger');
+  const open=m.classList.toggle('open');
+  b.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function burgerClose(){
+  const m=document.getElementById('mobMenu'),b=document.getElementById('burger');
+  m.classList.remove('open');b.classList.remove('open');
+  document.body.style.overflow='';
 }
 
 if(currentLang!=='en')applyLang(currentLang);

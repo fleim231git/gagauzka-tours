@@ -117,6 +117,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
 .r.up{opacity:1;transform:none}
 .r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
 .lang-sw{display:flex;align-items:center;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:2px}.ls-btn{background:transparent;border:none;color:var(--muted);padding:.3rem .6rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .22s;font-family:'Space Grotesk',sans-serif;line-height:1}.ls-btn.active{background:var(--lime);color:var(--dark)}.ls-btn:hover:not(.active){background:var(--border);color:var(--dark)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:5px;width:34px;height:34px;flex-shrink:0;margin-left:6px}.burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--dark);transition:all .3s}.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mob-menu{position:fixed;top:0;left:0;right:0;z-index:98;background:rgba(22,18,38,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:74px 2rem 2.5rem;display:none;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08);transform:translateY(-110%);transition:transform .38s cubic-bezier(.4,0,.2,1)}.mob-menu.open{transform:translateY(0)}.mob-menu a{font-size:1rem;font-weight:600;color:rgba(255,255,255,.65);padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:block;transition:color .2s;text-decoration:none}.mob-menu a:hover{color:#fff}.mob-book-lnk{background:var(--lime)!important;color:var(--dark)!important;text-align:center;border-radius:100px;border-bottom:none!important;margin-top:1rem;font-weight:700!important;padding:.9rem 0!important}@media(max-width:900px){.burger{display:flex}.mob-menu{display:flex}.logo-l{display:none}}
   </style>
 </head>
 <body>
@@ -135,7 +136,17 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     <button class="ls-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
     <button class="ls-btn" data-lang="ro" onclick="setLang('ro')">RO</button>
   </div>
+  <button class="burger" id="burger" aria-label="Menu" onclick="burgerToggle()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="../index.html#tours" onclick="burgerClose()" data-en="All Tours" data-ru="Все туры" data-ro="Toate Tururile">All Tours</a>
+  <a href="../index.html#gallery" onclick="burgerClose()" data-en="Gallery" data-ru="Галерея" data-ro="Galerie">Gallery</a>
+  <a href="../index.html#guides" onclick="burgerClose()" data-en="Guides" data-ru="Гиды" data-ro="Ghizi">Guides</a>
+  <a href="../index.html#reviews" onclick="burgerClose()" data-en="Reviews" data-ru="Отзывы" data-ro="Recenzii">Reviews</a>
+  <a href="#book" class="mob-book-lnk" onclick="burgerClose()" data-en="Book Now" data-ru="Забронировать" data-ro="Rezervă">Book Now</a>
+</div>
 
 <section class="tour-hero">
   <div class="tour-hero-bg" style="background-image:url('../assets/images/gallery-night-chisinau.jpg')"></div>
@@ -263,6 +274,8 @@ document.querySelectorAll('.r').forEach(el=>ro.observe(el));
 lbInit();
 function setLang(lang){localStorage.setItem('gtLang',lang);applyLang(lang);}
 function applyLang(lang){document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=lang==='ru'?(el.dataset.ru||el.dataset.en):lang==='ro'?(el.dataset.ro||el.dataset.en):el.dataset.en;});document.querySelectorAll('[data-en-html]').forEach(el=>{el.innerHTML=lang==='ru'?(el.dataset.ruHtml||el.dataset.enHtml):lang==='ro'?(el.dataset.roHtml||el.dataset.enHtml):el.dataset.enHtml;});document.querySelectorAll('.ls-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.lang===lang);});document.documentElement.lang=lang;}
+function burgerToggle(){const m=document.getElementById('mobMenu'),b=document.getElementById('burger');const open=m.classList.toggle('open');b.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';}
+function burgerClose(){const m=document.getElementById('mobMenu'),b=document.getElementById('burger');m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}
 const _lang=localStorage.getItem('gtLang')||'en';applyLang(_lang);
 async function sendForm(e){e.preventDefault();const btn=document.getElementById('submitBtn');const form=e.target;btn.textContent='Sending…';btn.disabled=true;try{const data={};new FormData(form).forEach((val,key)=>{data[key]=val});data['_subject']='New Booking — Gagauzka Tours';const res=await fetch('https://formsubmit.co/ajax/6ad4070923e75701dc1b28d8d5aa8696',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});if(res.ok){btn.textContent='✓ Sent! We\'ll reply within 3 hours.';btn.style.cssText='width:100%;background:#e8f7a0;color:#1a1915;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;cursor:default;margin-top:.75rem';}else{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.style.cssText='width:100%;background:#fee2e2;color:#991b1b;border:none;border-radius:11px;padding:.95rem;font-family:Space Grotesk,sans-serif;font-size:.95rem;font-weight:700;margin-top:.75rem;cursor:pointer';btn.disabled=false;}}catch{btn.textContent='Error — email us: work.jelezoglomaria@gmail.com';btn.disabled=false;}}
 </script>
