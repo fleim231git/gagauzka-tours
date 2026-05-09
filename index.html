@@ -202,7 +202,7 @@ footer .logo-img{width:64px;height:64px;}
 .tc{position:relative;border-radius:24px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s}
 .tc:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(26,25,21,.18)}
 .tc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
-.tc:hover .tc-img{transform:scale(1.06)}
+.tc:hover .tc-img{transform:scale(1.06)}.tc:hover .tc-bg-div{transform:scale(1.06)}
 .tc-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.97) 0%,rgba(10,10,8,.35) 52%,rgba(10,10,8,.04) 100%);transition:background .4s}
 .tc:hover .tc-veil{background:linear-gradient(to top,rgba(10,10,8,.99) 0%,rgba(10,10,8,.58) 52%,rgba(10,10,8,.12) 100%)}
 .tc-body{position:absolute;inset:0;padding:1.75rem 2rem;display:flex;flex-direction:column;justify-content:flex-end}
@@ -696,8 +696,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
     <div class="tours-grid">
 
       <div class="tc r" onclick="location.href='tours/gagauzia.html'">
-        <div style="position:absolute;inset:0;background:url('assets/images/Olea.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
-        <img class="tc-img" src="assets/images/Olea.jpg" alt="Gagauzia" style="object-fit:contain; object-position:center center; background:transparent">
+        <div style="position:absolute;inset:0;background:url('assets/images/Olea.jpg') 65% 18%/cover no-repeat;transition:transform .65s cubic-bezier(.25,.46,.45,.94)" class="tc-bg-div"></div>
         <div class="tc-veil"></div>
         <div class="tc-body">
           <span class="tc-region" data-en="Southern Moldova · 8 hours" data-ru="Южная Молдова · 8 часов" data-ro="Moldova de Sud · 8 ore">Southern Moldova · 8 hours</span>
@@ -710,8 +709,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
       </div>
 
       <div class="tc r d1" onclick="location.href='tours/soviet-nostalgia.html'">
-        <div style="position:absolute;inset:0;background:url('assets/images/photo_2026-04-29_11-16-31.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
-        <img class="tc-img" src="assets/images/photo_2026-04-29_11-16-31.jpg" alt="Soviet Nostalgia" style="object-fit:contain; object-position:center center; background:transparent">
+        <img class="tc-img" src="assets/images/photo_2026-05-09_21-52-24.jpg" alt="Soviet Nostalgia" style="object-position:center 45%">
         <div class="tc-veil"></div>
         <div class="tc-body">
           <span class="tc-region" data-en="Transnistria · PMR" data-ru="Приднестровье · ПМР" data-ro="Transnistria · RMN">Transnistria · PMR</span>
@@ -750,8 +748,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
       </div>
 
       <div class="tc r d4" onclick="location.href='tours/chisinau.html'">
-        <div style="position:absolute;inset:0;background:url('assets/images/gallery-night-chisinau.jpg') center/cover;filter:blur(18px) brightness(0.55);transform:scale(1.1)"></div>
-        <img class="tc-img" src="assets/images/gallery-night-chisinau.jpg" alt="Chisinau by night" style="object-fit:contain; object-position:center center; background:transparent">
+        <div style="position:absolute;inset:0;background:url('assets/images/photo_2026-05-09_21-54-17.jpg') center 55%/cover no-repeat;transition:transform .65s cubic-bezier(.25,.46,.45,.94)" class="tc-bg-div"></div>
         <div class="tc-veil"></div>
         <div class="tc-body">
           <span class="tc-region" data-en="Chișinău · Moldova · 3 hours" data-ru="Кишинёв · Молдова · 3 часа" data-ro="Chișinău · Moldova · 3 ore">Chișinău · Moldova · 3 hours</span>

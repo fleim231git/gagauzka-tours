@@ -36,7 +36,7 @@ CSS класса по умолчанию: `object-fit: cover` — изображ
 ### Текущие карточки туров
 | Тур | Файл | Стиль | Примечание |
 |-----|------|-------|------------|
-| Gagauzia Discovery | `Olea.jpg` | `contain` + blurred bg | Вертикальное фото Олеи с лошадью |
+| Gagauzia Discovery | `photo_2026-05-09_21-44-36.jpg` | `contain` + blurred bg | Вертикальное фото семьи в национальных костюмах |
 | Soviet Nostalgia Tour | `tour-pmr.jpg` | `cover`, `center 40%` | Горизонтальное фото парка статуй |
 | Guinness World Record | `tour-pmr.jpg` | `cover`, `center 40%` | Горизонтальное фото (та же локация) |
 | Odessa Seafood Tour | `tour-odessa2.jpg` | `cover`, `center 30%` | Горизонтальное аэрофото заката |
