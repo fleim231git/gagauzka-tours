@@ -215,7 +215,7 @@ footer .logo-l{color:rgba(255,255,255,.85)}
           <div class="sf-fg"><label data-en="Preferred Date" data-ru="Желаемая дата" data-ro="Data preferată">Preferred Date</label><input type="date" name="date"></div>
           <div class="sf-fg">
             <label data-en="Tour Type *" data-ru="Тип тура *" data-ro="Tip de tur *">Tour Type *</label>
-            <select name="type" required>
+            <select name="type" required onchange="updateGroupSize(this)">
               <option value="" disabled selected data-en="Select type" data-ru="Выберите тип" data-ro="Selectați tipul">Select type</option>
               <option>Shared (2+) — 250€</option>
               <option>Private — 390€</option>
